@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="title">
-      <p>S4NT4.GRAPHICS</p>
+      <p>S4NT4.GRAPHICS<span class="blink">▁</span></p>
     </div>
     <div class="links">
       <a href="https://twitter.com/santa_s4nt4" target="_blank">
@@ -36,51 +36,75 @@ export default {}
 
 <style>
 template {
+  font-family: "JetBrains Mono";
   font-size: 10px;
-}
-
-@font-face {
-  font-family: "JetBrainsMono";
-  src: url("/assets/font/JetBrainsMono-ExtraBold.woff2") format("woff2");
 }
 
 .container {
   background-color: black;
   min-height: 100vh;
   text-align: left;
+  padding-top: 1rem;
+  padding-left: 1rem;
 }
 
 .title {
-  font-family: "JetBrainsMono";
+  font-family: "JetBrains Mono";
+  font-weight: 500;
   display: block;
-  font-weight: 300;
   font-size: 1.6rem;
   color: #ffffff;
-  letter-spacing: 0.15rem;
+  letter-spacing: -0.05rem;
+  padding-bottom: 1rem;
+}
+
+.blink {
+	-webkit-animation: blink 0.25s ease-in-out infinite alternate;
+	animation: blink 0.25s ease-in-out infinite alternate;
+}
+@-webkit-keyframes blink {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+@keyframes blink {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
 }
 
 .links {
   display: block;
   font-weight: 300;
   font-size: 1.6rem;
-  color: #ffffff;
   letter-spacing: 0.15rem;
+  padding-bottom: 1rem;
+}
+
+.links a {
+  text-decoration: none;
 }
 
 .person_discription {
+  font-family: "JetBrains Mono";
   display: block;
-  font-weight: 300;
-  font-size: 1.6rem;
+  font-weight: 400;
+  font-size: 1.2rem;
   color: #ffffff;
-  letter-spacing: 0.15rem;
+  letter-spacing: -0.05rem;
+  padding-bottom: 2rem;
 }
 
 .works {
+  font-family: "JetBrains Mono";
   display: block;
-  font-weight: 300;
-  font-size: 1.6rem;
+  font-weight: 400;
+  font-size: 1.2rem;
   color: #ffffff;
-  letter-spacing: 0.15rem;
+  letter-spacing: -0.05rem;
+  padding-bottom: 2rem;
+}
+
+.works a {
+  text-decoration: none;
 }
 
 </style>
