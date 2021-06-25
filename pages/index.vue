@@ -13,6 +13,9 @@
       <a href="https://github.com/santa-s4nt4" target="_blank">
         &#x1f528;
       </a>
+      <a href="https://www.notion.so/s4nt4/ba157394681a4894986ea95a4ca2454d" target="_blank">
+        &#x1f4dd;
+      </a>
     </div>
     <div class="person_discription">
       <p>
@@ -41,12 +44,14 @@
 <script>
 import none from '~/components/none.vue'
 import about from '~/components/about.vue'
+import sonic_aquarium from '~/components/works/sonic_aquarium.vue'
 import Component2 from '~/components/Component2.vue'
 
 export default {
   components: {
     none,
     about,
+    sonic_aquarium,
     Component2
   },
   data() {
@@ -61,7 +66,7 @@ export default {
       this.currentView = "about"
     },
     sonic_aquarium() {
-      this.currentView = "component2"
+      this.currentView = "sonic_aquarium"
     },
     holarchy() {
       this.currentView = "component2"
@@ -80,6 +85,8 @@ export default {
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap");
+
 template {
   font-family: "JetBrains Mono";
   font-size: 10px;
