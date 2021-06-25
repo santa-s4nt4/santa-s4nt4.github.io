@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="title">
-      <p>S4NT4.GRAPHICS<span class="blink">▁</span></p>
+      <a href=""><p>S4NT4.GRAPHICS<span class="blink">▁</span></p></a>
     </div>
     <div class="links">
       <a href="https://twitter.com/santa_s4nt4" target="_blank">
@@ -16,7 +16,7 @@
     </div>
     <div class="person_discription">
       <p>
-        Santa is a visual programmer based in Tokyo.
+        <span @click="view_about">Santa</span> is a visual programmer based in Tokyo.
         <br> Favorite: visual performance, generative art, installation...
       </p>
     </div>
@@ -24,14 +24,59 @@
       <p>
         Noticeable works: 
         <br>
-        Sonic-Aquarium, holarchy, Playing Tokyo Vol.11, Save The Metro Compilations, Algorave Tokyo
+        <span @click="sonic_aquarium">Sonic-Aquarium</span>, 
+        <span @click="holarchy">holarchy</span>, 
+        <span @click="pt_11">Playing Tokyo Vol.11</span>, 
+        <span @click="save_metro">Save The Metro Compilations</span>, 
+        <span @click="algorave_tokyo">Algorave Tokyo</span>
       </p>
+    </div>
+    <div class="content">
+      <!--(1)component要素 (currentViewで指定されたコンポーネントを動的に表示する) -->
+      <component :is="currentView"></component>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import none from '~/components/none.vue'
+import about from '~/components/about.vue'
+import Component2 from '~/components/Component2.vue'
+
+export default {
+  components: {
+    none,
+    about,
+    Component2
+  },
+  data() {
+    return { 
+      //(2)表示するコンポーネント名を指定します。
+      currentView: "none"
+    }
+  },
+  methods: {
+    //(3)ボタンクリックで表示するコンポーネントを切り替える
+    view_about() {
+      this.currentView = "about"
+    },
+    sonic_aquarium() {
+      this.currentView = "component2"
+    },
+    holarchy() {
+      this.currentView = "component2"
+    },
+    pt_11() {
+      this.currentView = "component2"
+    },
+    save_metro() {
+      this.currentView = "component2"
+    },
+    algorave_tokyo() {
+      this.currentView = "component2"
+    }
+  }
+}
 </script>
 
 <style>
@@ -52,10 +97,15 @@ template {
   font-family: "JetBrains Mono";
   font-weight: 500;
   display: block;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   color: #ffffff;
   letter-spacing: -0.05rem;
   padding-bottom: 1rem;
+}
+
+.title a {
+  text-decoration: none;
+  color: #ffffff;
 }
 
 .blink {
@@ -74,7 +124,7 @@ template {
 .links {
   display: block;
   font-weight: 300;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   letter-spacing: 0.15rem;
   padding-bottom: 1rem;
 }
@@ -87,17 +137,25 @@ template {
   font-family: "JetBrains Mono";
   display: block;
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #ffffff;
   letter-spacing: -0.05rem;
   padding-bottom: 2rem;
+}
+
+.person_discription span {
+  background-color: #ffffff;
+}
+
+.person_discription span:hover {
+  background-color: #000000;
 }
 
 .works {
   font-family: "JetBrains Mono";
   display: block;
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #ffffff;
   letter-spacing: -0.05rem;
   padding-bottom: 2rem;
@@ -105,6 +163,14 @@ template {
 
 .works a {
   text-decoration: none;
+}
+
+.works span {
+  background-color: #ffffff;
+}
+
+.works span:hover {
+  background-color: #000000;
 }
 
 </style>
