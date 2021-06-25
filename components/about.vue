@@ -11,12 +11,10 @@
   <div class="about">
       <p>Exhibition / Event</p>
       <details>
-            <summary>[2020]</summary>
-            <p>
-              [2020.09]
-              <a
-                href="https://twitter.com/rhizomatiks/status/1308730110661414912?s=20"
-                target="_blank"
+        <summary>[2020]</summary>
+        <p>
+          [2020.09]
+          <a href="https://twitter.com/rhizomatiks/status/1308730110661414912?s=20" target="_blank"
                 >Playing Tokyo Vol.11</a
               >
               - Visual <br />
