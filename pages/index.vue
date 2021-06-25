@@ -45,14 +45,12 @@
 import none from '~/components/none.vue'
 import about from '~/components/about.vue'
 import sonic_aquarium from '~/components/works/sonic_aquarium.vue'
-import Component2 from '~/components/Component2.vue'
 
 export default {
   components: {
     none,
     about,
-    sonic_aquarium,
-    Component2
+    sonic_aquarium
   },
   data() {
     return { 
@@ -69,16 +67,16 @@ export default {
       this.currentView = "sonic_aquarium"
     },
     holarchy() {
-      this.currentView = "component2"
+      this.currentView = "sonic_aquarium"
     },
     pt_11() {
-      this.currentView = "component2"
+      this.currentView = "sonic_aquarium"
     },
     save_metro() {
-      this.currentView = "component2"
+      this.currentView = "sonic_aquarium"
     },
     algorave_tokyo() {
-      this.currentView = "component2"
+      this.currentView = "sonic_aquarium"
     }
   }
 }
