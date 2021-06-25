@@ -35,7 +35,7 @@
             href="https://twitter.com/rhizomatiks/status/1308730110661414912?s=20"
             >Playing Tokyo Vol.11</a
           >
-          でのVJに使用したVisual System．
+          でのVJに使用したvisual system．
           </p>
         </div>
         <div class="caption">

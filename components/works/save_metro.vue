@@ -25,11 +25,8 @@
         <div class="discription">
           <p width=60%>
             <br />
-            2020/09/25に<a href="https://www.twitch.tv/rhizomatiks">twitch.tv/rhizomatiks</a>で配信された<a
-            href="https://twitter.com/rhizomatiks/status/1308730110661414912?s=20"
-            >Playing Tokyo Vol.11</a
-          >
-          でのVJに使用したVisual System．
+            2020/06/27にで信されたMETRO 30周年記念配信 -DAY2- Save The Metro Compilations curated by
+            Ken’ichi ItoiでのVJに使用したvisual system．
           </p>
         </div>
         <div class="caption">
