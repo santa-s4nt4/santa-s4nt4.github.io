@@ -111,6 +111,7 @@ template {
   font-size: 1rem;
   color: #ffffff;
   letter-spacing: -0.05rem;
+  line-height: 1.5;
   padding-bottom: 1rem;
 }
 

@@ -21,8 +21,8 @@
     </div>
     <div class="person_discription">
       <p>
-        <span @click="view_about">Santa</span> is a visual programmer based in
-        Tokyo. <br />
+        <router-link @click.native="view_about" to="/">Santa</router-link>
+        is a visual programmer based in Tokyo. <br />
         Favorite: visual performance, generative art, installation...
       </p>
     </div>
@@ -30,11 +30,18 @@
       <p>
         Noticeable works:
         <br />
-        <span @click="sonic_aquarium">Sonic-Aquarium</span>,
-        <span @click="holarchy">holarchy</span>,
-        <span @click="pt_11">Playing Tokyo Vol.11</span>,
-        <span @click="save_metro">Save The Metro Compilations</span>,
-        <span @click="algorave_tokyo">Algorave Tokyo</span>
+        <router-link @click.native="sonic_aquarium" to="/"
+          >Sonic-Aquarium</router-link
+        >, <router-link @click.native="holarchy" to="/">holarchy</router-link>,
+        <router-link @click.native="pt_11" to="/"
+          >Playing Tokyo Vol.11</router-link
+        >,
+        <router-link @click.native="save_metro" to="/"
+          >Save The Metro Compilations</router-link
+        >,
+        <router-link @click.native="algorave_tokyo" to="/"
+          >Algorave Tokyo</router-link
+        >
       </p>
     </div>
     <div class="content">
@@ -171,11 +178,12 @@ a:visited {
   padding-bottom: 2rem;
 }
 
-.person_discription span {
+.person_discription a {
+  text-decoration: none;
   background-color: #ffffff;
 }
 
-.person_discription span:hover {
+.person_discription a:hover {
   background-color: #000000;
 }
 
@@ -194,11 +202,11 @@ a:visited {
   text-decoration: none;
 }
 
-.works span {
+.works a {
   background-color: #ffffff;
 }
 
-.works span:hover {
+.works a:hover {
   background-color: #000000;
 }
 </style>
