@@ -5,9 +5,60 @@ template {
   font-size: 10px;
 }
 
-.work {
-  width: 60%;
-  padding-bottom: 3rem;
+@media (max-width: 3840px) {
+  .work {
+    width: 40%;
+    padding-bottom: 3rem;
+  }
+  
+  .work img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 2880px) {
+  .work {
+    width: 60%;
+    padding-bottom: 3rem;
+  }
+  
+  .work img {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 1920px) {
+  .work {
+    width: 60%;
+    padding-bottom: 3rem;
+  }
+  
+  .work img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .work {
+    width: 100%;
+    padding-bottom: 3rem;
+  }
+  
+  .work img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 720px) {
+  .work {
+    width: 100%;
+    padding-bottom: 3rem;
+  }
+  
+  .work img {
+    width: 100%;
+  }
 }
 
 .work p {

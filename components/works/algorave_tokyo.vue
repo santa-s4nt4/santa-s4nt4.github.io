@@ -17,21 +17,21 @@
         class="magnifiable"
         src="https://lh3.googleusercontent.com/-gttDXJJ2jGM/XkzkdidhSKI/AAAAAAAAqdM/ImQW8kFWhdUoF-OgM7P5xKttRMFoo5uuQCE0YBhgL/s1200/algorave1.gif"
         itemprop="image"
-        width="80%"
+        
       />
       <br />
       <img
         class="magnifiable"
         src="https://lh3.googleusercontent.com/-c-qLqCyOhzQ/XkzkizaSAoI/AAAAAAAAqdU/sj47hh6QwCweBwCXZkPz9ZpZO5w2EXlawCE0YBhgL/s1200/algorave2.gif"
         itemprop="image"
-        width="80%"
+        
       />
       <br />
       <img
         class="magnifiable"
         src="https://lh3.googleusercontent.com/-UOs49wHV3R4/Xkzkf48fBTI/AAAAAAAAqdQ/Jac7WLbAgvcj-oWVTQ_wdcXaRY4anxZ1wCE0YBhgL/s1200/algorave4.gif"
         itemprop="image"
-        width="80%"
+        
       />
       <br />
       <div class="discription">

@@ -8,7 +8,7 @@
         class="magnifiable"
         src="https://lh3.googleusercontent.com/q2D8hgWaeAhPw-oBmWJtCqmQQsvbA26Dkoi1QiF2j6GRKVbn3FsfIYBEyl7-hTTgSNr0m8owtQ2N8So9XhcywmZPyAkFzOGdqYlb2Snv-7DJY9uQrf05anm_rvhBjoA3zKmQqz3B4og=w2400"
         itemprop="image"
-        width="80%"
+        
       />
       <br />
       <div class="discription">

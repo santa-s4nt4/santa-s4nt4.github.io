@@ -7,17 +7,17 @@
       >
     </div>
     <div class="links">
-      <a href="https://twitter.com/santa_s4nt4" target="_blank"> &#x1f5e3; </a>
+      <a href="https://twitter.com/santa_s4nt4" target="_blank"> &#x1f4ac;</a>
       <a href="https://www.instagram.com/santa_s4nt4/" target="_blank">
-        &#x1f4f7;
-      </a>
-      <a href="https://github.com/santa-s4nt4" target="_blank"> &#x1f528; </a>
+        &#x1f4f7;</a
+      >
+      <a href="https://github.com/santa-s4nt4" target="_blank"> &#x1f528;</a>
       <a
         href="https://www.notion.so/s4nt4/ba157394681a4894986ea95a4ca2454d"
         target="_blank"
       >
-        &#x1f4dd;
-      </a>
+        &#x1f4dd;</a
+      >
     </div>
     <div class="person_discription">
       <p>
@@ -107,6 +107,7 @@ template {
   text-align: left;
   padding-top: 1rem;
   padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .title {
@@ -153,8 +154,10 @@ template {
   padding-bottom: 1rem;
 }
 
-.links a {
+.links a,
+a:visited {
   text-decoration: none;
+  color: #ffffff;
 }
 
 .person_discription {
@@ -164,6 +167,7 @@ template {
   font-size: 1rem;
   color: #ffffff;
   letter-spacing: -0.05rem;
+  line-height: 1.5;
   padding-bottom: 2rem;
 }
 
@@ -182,6 +186,7 @@ template {
   font-size: 1rem;
   color: #ffffff;
   letter-spacing: -0.05rem;
+  line-height: 1.5;
   padding-bottom: 2rem;
 }
 

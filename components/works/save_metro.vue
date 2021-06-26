@@ -8,21 +8,21 @@
         class="magnifiable"
         src="https://lh3.googleusercontent.com/QlnS59pO3nq3EMc_0q-hpX5Wn1D7lp1MW5DJRh--4_9znb8H0hj7mkpwPUuxFNxsjX5Vr_QlbXZfrJJfeUgiNpQPralPsCRv2FjeMeiigNeu-ia_Zh5S3ypihA_gIzeSjfPv5qjNrrs=w2400"
         itemprop="image"
-        width="80%"
+        
       />
       <br />
       <img
         class="magnifiable"
         src="https://lh3.googleusercontent.com/aMzRBxUPGB1FhEMufTVkxbdUsp1TOisH2qvcf4sqZnsDHGBGJpHCULON1DdLbvJ5FnX2yFrfj89-AYdJMhVjslcCxk0uYTNFgf0EqZZgEgWqBZqDDtAYOYWr-lqUAz1WN3pbjrc-uEI=w2400"
         itemprop="image"
-        width="80%"
+        
       />
       <br />
       <img
         class="magnifiable"
         src="https://lh3.googleusercontent.com/1dLsdYkWmmOSDTh6MFqseJM7VyiMQ9_M9nDK2DFXvTzQ1OUsuDP45cTPUotY8aQeC6_eMLf-sKGrlQvT5wCmhj83RGMre5THsewffcoQqjrj2AcIhgjm41MFHvcB_xmCHCp0MPpFTSw=w2400"
         itemprop="image"
-        width="80%"
+        
       />
       <br />
       <div class="discription">
