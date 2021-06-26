@@ -123,4 +123,8 @@ template {
 .about a:hover {
   color: #ffffff;
 }
+
+.about details:focus {
+  outline: none;
+}
 </style>

@@ -183,6 +183,7 @@ a:visited {
 
 .person_discription a {
   text-decoration: none;
+  color: #ffffff;
   background-color: #ffffff;
 }
 
@@ -203,10 +204,12 @@ a:visited {
 
 .works a {
   text-decoration: none;
+  background-color: #ffffff;
+  color: #ffffff;
 }
 
-.works a {
-  background-color: #ffffff;
+.works a:active {
+  color: #ffffff;
 }
 
 .works a:hover {
