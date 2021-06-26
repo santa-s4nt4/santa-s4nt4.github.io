@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <link rel="stylesheet" href="~/assets/css/jetbrains-mono.css" />
     <div class="title">
       <a href=""
         ><p>S4NT4.GRAPHICS<span class="blink">▁</span></p></a
