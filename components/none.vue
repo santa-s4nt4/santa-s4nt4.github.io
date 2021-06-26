@@ -14,14 +14,4 @@ template {
   padding-top: 1rem;
   padding-left: 1rem;
 }
-
-h1 {
-  font-family: "JetBrains Mono";
-  font-weight: 500;
-  display: block;
-  font-size: 1.2rem;
-  color: #ffffff;
-  letter-spacing: -0.05rem;
-  padding-bottom: 1rem;
-}
 </style>
