@@ -1,36 +1,38 @@
 <template>
   <div class="container">
     <div class="title">
-      <a href=""><p>S4NT4.GRAPHICS<span class="blink">▁</span></p></a>
+      <a href=""
+        ><p>S4NT4.GRAPHICS<span class="blink">▁</span></p></a
+      >
     </div>
     <div class="links">
-      <a href="https://twitter.com/santa_s4nt4" target="_blank">
-        &#x1f5e3;
-      </a>
+      <a href="https://twitter.com/santa_s4nt4" target="_blank"> &#x1f5e3; </a>
       <a href="https://www.instagram.com/santa_s4nt4/" target="_blank">
         &#x1f4f7;
       </a>
-      <a href="https://github.com/santa-s4nt4" target="_blank">
-        &#x1f528;
-      </a>
-      <a href="https://www.notion.so/s4nt4/ba157394681a4894986ea95a4ca2454d" target="_blank">
+      <a href="https://github.com/santa-s4nt4" target="_blank"> &#x1f528; </a>
+      <a
+        href="https://www.notion.so/s4nt4/ba157394681a4894986ea95a4ca2454d"
+        target="_blank"
+      >
         &#x1f4dd;
       </a>
     </div>
     <div class="person_discription">
       <p>
-        <span @click="view_about">Santa</span> is a visual programmer based in Tokyo.
-        <br> Favorite: visual performance, generative art, installation...
+        <span @click="view_about">Santa</span> is a visual programmer based in
+        Tokyo. <br />
+        Favorite: visual performance, generative art, installation...
       </p>
     </div>
     <div class="works">
       <p>
-        Noticeable works: 
-        <br>
-        <span @click="sonic_aquarium">Sonic-Aquarium</span>, 
-        <span @click="holarchy">holarchy</span>, 
-        <span @click="pt_11">Playing Tokyo Vol.11</span>, 
-        <span @click="save_metro">Save The Metro Compilations</span>, 
+        Noticeable works:
+        <br />
+        <span @click="sonic_aquarium">Sonic-Aquarium</span>,
+        <span @click="holarchy">holarchy</span>,
+        <span @click="pt_11">Playing Tokyo Vol.11</span>,
+        <span @click="save_metro">Save The Metro Compilations</span>,
         <span @click="algorave_tokyo">Algorave Tokyo</span>
       </p>
     </div>
@@ -42,13 +44,13 @@
 </template>
 
 <script>
-import none from '~/components/none.vue'
-import about from '~/components/about.vue'
-import sonic_aquarium from '~/components/works/sonic_aquarium.vue'
-import holarchy from '~/components/works/holarchy.vue'
-import pt_11 from '~/components/works/pt_11.vue'
-import save_metro from '~/components/works/save_metro.vue'
-import algorave_tokyo from '~/components/works/algorave_tokyo.vue'
+import none from "~/components/none.vue";
+import about from "~/components/about.vue";
+import sonic_aquarium from "~/components/works/sonic_aquarium.vue";
+import holarchy from "~/components/works/holarchy.vue";
+import pt_11 from "~/components/works/pt_11.vue";
+import save_metro from "~/components/works/save_metro.vue";
+import algorave_tokyo from "~/components/works/algorave_tokyo.vue";
 
 export default {
   components: {
@@ -58,36 +60,36 @@ export default {
     holarchy,
     pt_11,
     save_metro,
-    algorave_tokyo
+    algorave_tokyo,
   },
   data() {
-    return { 
+    return {
       //(2)表示するコンポーネント名を指定します。
-      currentView: "none"
-    }
+      currentView: "none",
+    };
   },
   methods: {
     //(3)ボタンクリックで表示するコンポーネントを切り替える
     view_about() {
-      this.currentView = "about"
+      this.currentView = "about";
     },
     sonic_aquarium() {
-      this.currentView = "sonic_aquarium"
+      this.currentView = "sonic_aquarium";
     },
     holarchy() {
-      this.currentView = "holarchy"
+      this.currentView = "holarchy";
     },
     pt_11() {
-      this.currentView = "pt_11"
+      this.currentView = "pt_11";
     },
     save_metro() {
-      this.currentView = "save_metro"
+      this.currentView = "save_metro";
     },
     algorave_tokyo() {
-      this.currentView = "algorave_tokyo"
-    }
-  }
-}
+      this.currentView = "algorave_tokyo";
+    },
+  },
+};
 </script>
 
 <style>
@@ -122,16 +124,24 @@ template {
 }
 
 .blink {
-	-webkit-animation: blink 0.25s ease-in-out infinite alternate;
-	animation: blink 0.25s ease-in-out infinite alternate;
+  -webkit-animation: blink 0.25s ease-in-out infinite alternate;
+  animation: blink 0.25s ease-in-out infinite alternate;
 }
 @-webkit-keyframes blink {
-	0% {opacity: 0;}
-	100% {opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 @keyframes blink {
-	0% {opacity: 0;}
-	100% {opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .links {
@@ -185,5 +195,4 @@ template {
 .works span:hover {
   background-color: #000000;
 }
-
 </style>
