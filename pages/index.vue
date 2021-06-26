@@ -2,8 +2,8 @@
   <div class="container">
     <link rel="stylesheet" href="~/assets/css/jetbrains-mono.css" />
     <div class="title">
-      <a href=""
-        ><p>S4NT4.GRAPHICS<span class="blink">▁</span></p></a
+      <router-link @click.native="none" to="/"
+        ><p>S4NT4.GRAPHICS<span class="blink">▁</span></p></router-link
       >
     </div>
     <div class="links">
@@ -78,6 +78,9 @@ export default {
   },
   methods: {
     //(3)ボタンクリックで表示するコンポーネントを切り替える
+    none() {
+      this.currentView = "none";
+    },
     view_about() {
       this.currentView = "about";
     },
