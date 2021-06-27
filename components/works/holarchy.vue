@@ -8,7 +8,6 @@
         class="magnifiable"
         src="https://lh3.googleusercontent.com/q2D8hgWaeAhPw-oBmWJtCqmQQsvbA26Dkoi1QiF2j6GRKVbn3FsfIYBEyl7-hTTgSNr0m8owtQ2N8So9XhcywmZPyAkFzOGdqYlb2Snv-7DJY9uQrf05anm_rvhBjoA3zKmQqz3B4og=w2400"
         itemprop="image"
-        
       />
       <br />
       <div class="discription">
@@ -48,8 +47,8 @@
           <br />
           Keio SFC Nao Tokui Lab (Computational Creativity Lab) x-visual team
           <br />Scott Allen - Direction <br />Yusuke Yamada - Deep learning
-          <br />Reo Anzai - UI design <br />Santa - Front-end <br />Aina Ono -
-          Tech support
+          <br />Reo Anzai - UI design <br />Santa<span class="blink">▁</span> -
+          Front-end <br />Aina Ono - Tech support
         </p>
       </div>
     </div>
