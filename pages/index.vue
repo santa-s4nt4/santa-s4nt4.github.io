@@ -8,7 +8,7 @@
     </div>
     <div class="links">
       <a href="https://twitter.com/_s4nt4" target="_blank"> &#x1f4ac;</a>
-      <a href="https://www.instagram.com/santa_s4nt4/" target="_blank">
+      <a href="https://www.instagram.com/__s4nt4/" target="_blank">
         &#x1f4f7;</a
       >
       <a href="https://github.com/santa-s4nt4" target="_blank"> &#x1f528;</a>
