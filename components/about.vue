@@ -1,9 +1,15 @@
 <template>
   <div>
     <div class="about">
-      <img
+      <!-- <img
         class="magnifiable"
         src="https://lh3.googleusercontent.com/XEvzlRTAP0WqxGujbXkrUQqfP4EWAcL2zIZoUZzblXVUHlJSJ5LI55GgPiaK39czR1iPucFej-xJvAIXsBqa1qEfCR53rGMUZQPaaG4gZJdsn4YgXxXg1UiclFz7i--BOag7BEdzDXQ=w2400"
+        itemprop="image"
+        width="200px"
+      /> -->
+      <img
+        class="magnifiable"
+        src="~/assets/img/profile.png"
         itemprop="image"
         width="200px"
       />
