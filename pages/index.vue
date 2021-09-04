@@ -167,7 +167,7 @@ template {
 .links a,
 a:visited {
   text-decoration: none;
-  color: #ffffff;
+  color: #9e9e9e;
 }
 
 .person_discription {

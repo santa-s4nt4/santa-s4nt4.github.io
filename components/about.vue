@@ -1,6 +1,14 @@
 <template>
   <div>
     <div class="about">
+      <img
+        class="magnifiable"
+        src="https://lh3.googleusercontent.com/XEvzlRTAP0WqxGujbXkrUQqfP4EWAcL2zIZoUZzblXVUHlJSJ5LI55GgPiaK39czR1iPucFej-xJvAIXsBqa1qEfCR53rGMUZQPaaG4gZJdsn4YgXxXg1UiclFz7i--BOag7BEdzDXQ=w2400"
+        itemprop="image"
+        width="200px"
+      />
+    </div>
+    <div class="about">
       <p>Skill</p>
       <p>
         [Visual Tool] TouchDesigner / GLSL / Processing / p5.js
@@ -11,8 +19,35 @@
     <div class="about">
       <p>Exhibition / Event</p>
       <details>
+        <summary>[2021]</summary>
+        <p>
+          [2021.01]
+          <a
+            href="https://computervisionart.com/pieces2021/identity-disperser/"
+            target="_blank"
+            >computer vision art gallery for 2021 / identity disperser
+            -afforestation-</a
+          >
+          - Technical support
+        </p>
+      </details>
+      <details>
         <summary>[2020]</summary>
         <p>
+          [2020.12]
+          <a
+            href="https://sa2020.siggraph.org/en/attend/art-gallery/session_slot/191/2"
+            target="_blank"
+            >SIGGRAPH ASIA 2020 ART GALLERY</a
+          >
+          /
+          <a
+            href="https://cclab.sfc.keio.ac.jp/projects/x-visual-holarchy/"
+            target="_blank"
+            >holarchy</a
+          >
+          - Front-end
+          <br />
           [2020.09]
           <a
             href="https://twitter.com/rhizomatiks/status/1308730110661414912?s=20"
@@ -48,9 +83,7 @@
       <details>
         <summary>[2019]</summary>
         <p>
-          [2019.10]
-          <router-link to="works/191024">SFC Creative Week</router-link>&nbsp;-
-          Visual <br />[2019.07]
+          [2019.10] SFC Creative Week&nbsp;- Visual <br />[2019.07]
           <a href="https://sukitoku.hatenablog.com/entry/190617" target="_blank"
             >X-Music DJ Night</a
           >
@@ -94,6 +127,39 @@
         <a href="https://www.sfc.keio.ac.jp" target="_blank">SFC</a>
       </p>
     </div>
+    <div class="about">
+      <p>Work Experiences</p>
+      <p>
+        [2020.12 - Current]
+        <a href="https://synflux.io/" target="_blank">Synflux</a>
+        internship
+        <br />
+        [2021.02]
+        <a href="https://www.career.dentsu.jp/intern/w2021/" target="_blank"
+          >Dentsu, School of Technology & Idea</a
+        >
+        internship
+        <br />
+        [2020.10 - Current]
+        <a href="https://dentsucraft.tokyo/" target="_blank"
+          >Dentsu Craft Tokyo</a
+        >
+        internship
+        <br />
+        [2019.06 - 2019.10]
+        <a href="https://nepps.jp" target="_blank">Nepps</a> Mentor
+        <br />[2019.01 - 2019.03]
+        <a href="https://www.1-10.com" target="_blank">1→10, Inc.</a>
+        internship
+        <br />[2018.03]
+        <a
+          href="https://tech.mercari.com/entry/2017/12/20/170000"
+          target="_blank"
+        >
+          Mercari BOLD Scholarship for SXSW 2018
+        </a>
+      </p>
+    </div>
   </div>
 </template>
 
@@ -116,6 +182,11 @@ template {
 }
 
 .about a {
+  text-decoration: none;
+  color: #9e9e9e;
+}
+
+.about a:visited {
   text-decoration: none;
   color: #9e9e9e;
 }
