@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 's4nt4.graphics',
+    title: 's4nt4.cc',
     htmlAttrs: {
       lang: 'en'
     },
