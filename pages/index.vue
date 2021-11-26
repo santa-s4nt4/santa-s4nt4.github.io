@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="~/assets/css/jetbrains-mono.css" />
     <div class="title">
       <router-link @click.native="none" to="/"
-        ><p>S4NT4.GRAPHICS<span class="blink">▁</span></p></router-link
+        ><p>s4nt4.cc<span class="blink">▁</span></p></router-link
       >
     </div>
     <div class="links">
@@ -109,6 +109,10 @@ export default {
 template {
   font-family: "JetBrains Mono";
   font-size: 10px;
+}
+
+body {
+  overscroll-behavior-y: none;
 }
 
 .container {
