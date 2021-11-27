@@ -11,15 +11,14 @@
         class="magnifiable"
         src="~/assets/img/profile.png"
         itemprop="image"
-        width="200px"
+        width="250px"
       />
     </div>
     <div class="about">
       <p>Skill</p>
       <p>
-        [Visual Tool] TouchDesigner / GLSL / Processing / p5.js
-        <br />[Sound Tool] Cycling 74 Max / Ableton Live <br />[Programming
-        Language] Python <br />[Frontend] Nuxt.js / HTML / SCSS
+        [Software] TouchDesigner / Cycling 74 Max / Ableton Live
+        <br />[Coding] Processing / p5.js / Nuxt.js
       </p>
     </div>
     <div class="about">
@@ -27,6 +26,14 @@
       <details>
         <summary>[2021]</summary>
         <p>
+          [2021.11]
+          <a
+            href="https://twitter.com/XmusicLab/status/1449298210560692229?s=20"
+            target="_blank"
+            >Synthesize: x-Music Exhibition / Sonic Aquarium -Resonanced-</a
+          >
+          - Technical artist
+          <br />
           [2021.01]
           <a
             href="https://computervisionart.com/pieces2021/identity-disperser/"
@@ -44,13 +51,7 @@
           <a
             href="https://sa2020.siggraph.org/en/attend/art-gallery/session_slot/191/2"
             target="_blank"
-            >SIGGRAPH ASIA 2020 ART GALLERY</a
-          >
-          /
-          <a
-            href="https://cclab.sfc.keio.ac.jp/projects/x-visual-holarchy/"
-            target="_blank"
-            >holarchy</a
+            >SIGGRAPH ASIA 2020 ART GALLERY / holarchy</a
           >
           - Front-end
           <br />
@@ -89,7 +90,9 @@
       <details>
         <summary>[2019]</summary>
         <p>
-          [2019.10] SFC Creative Week&nbsp;- Visual <br />[2019.07]
+          [2019.10]
+          <a href="https://creative.sfc.keio.ac.jp/">SFC Creative Week</a
+          >&nbsp;- Visual <br />[2019.07]
           <a href="https://sukitoku.hatenablog.com/entry/190617" target="_blank"
             >X-Music DJ Night</a
           >
@@ -120,25 +123,35 @@
     <div class="about">
       <p>Education</p>
       <p>
+        [2019.04 - Current]
+        <a href="https://www.keio.ac.jp/" target="_blank">Keio University</a>
+        Tokyo, Japan - Bachelor of Arts in Environmental Information
+      </p>
+    </div>
+    <div class="about">
+      <p>Research Group</p>
+      <p>
         [2020.04 - Current]
         <a href="https://xml.sfc.keio.ac.jp/" target="_blank">x-Music Lab</a>,
         at
-        <a href="https://www.keio.ac.jp/" target="_blank">Keio University</a>
-        <a href="https://www.sfc.keio.ac.jp" target="_blank">SFC</a>
+        <a href="https://www.sfc.keio.ac.jp" target="_blank"
+          >Keio University SFC</a
+        >
         <br />[2019.04 - Current]
         <a href="https://cclab.sfc.keio.ac.jp" target="_blank"
           >Computational Creativity Lab</a
         >, at
-        <a href="https://www.keio.ac.jp/" target="_blank">Keio University</a>
-        <a href="https://www.sfc.keio.ac.jp" target="_blank">SFC</a>
+        <a href="https://www.sfc.keio.ac.jp" target="_blank"
+          >Keio University SFC</a
+        >
       </p>
     </div>
     <div class="about">
       <p>Work Experiences</p>
       <p>
-        [2020.12 - Current]
+        [2020.12 - 2021.09]
         <a href="https://synflux.io/" target="_blank">Synflux</a>
-        internship
+        s
         <br />
         [2021.02]
         <a href="https://www.career.dentsu.jp/intern/w2021/" target="_blank"
@@ -151,9 +164,6 @@
           >Dentsu Craft Tokyo</a
         >
         internship
-        <br />
-        [2019.06 - 2019.10]
-        <a href="https://nepps.jp" target="_blank">Nepps</a> Mentor
         <br />[2019.01 - 2019.03]
         <a href="https://www.1-10.com" target="_blank">1→10, Inc.</a>
         internship
@@ -189,16 +199,24 @@ template {
 
 .about a {
   text-decoration: none;
-  color: #9e9e9e;
+  color: #ffffff;
+  background-color: #ffffff;
+}
+
+.about summary {
+  cursor: pointer;
+  outline: none;
 }
 
 .about a:visited {
   text-decoration: none;
-  color: #9e9e9e;
+  color: #ffffff;
+  background-color: #ffffff;
 }
 
 .about a:hover {
   color: #ffffff;
+  background-color: #000000;
 }
 
 .about details:focus {

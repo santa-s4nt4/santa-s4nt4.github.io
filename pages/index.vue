@@ -22,8 +22,10 @@
     <div class="person_discription">
       <p>
         <router-link @click.native="view_about" to="/">Santa</router-link>
-        is a visual programmer based in Tokyo. <br />
-        Favorite: visual performance, generative art, installation...
+        is a visual artist based in Tokyo, Japan. <br />
+        He has been working on audio-visual and installation projects while
+        exploring visual expression that combines real-time rendering technology
+        and machine learning technology.
       </p>
     </div>
     <div class="works">
