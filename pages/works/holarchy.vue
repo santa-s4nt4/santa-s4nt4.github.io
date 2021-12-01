@@ -56,4 +56,29 @@
 </template>
 
 <style>
+div {
+  background-color: black;
+}
+
+.work a:active {
+  color: #ffffff;
+}
+
+.work a:hover {
+  background-color: #000000;
+}
+
+.caption a {
+  text-decoration: none;
+  background-color: #ffffff;
+  color: #ffffff;
+}
+
+.caption a:active {
+  color: #ffffff;
+}
+
+.caption a:hover {
+  background-color: #000000;
+}
 </style>

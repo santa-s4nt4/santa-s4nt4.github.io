@@ -192,6 +192,7 @@ template {
   display: block;
   font-size: 1rem;
   color: #ffffff;
+  background-color: black;
   letter-spacing: -0.05rem;
   line-height: 1.5;
   padding-bottom: 2rem;

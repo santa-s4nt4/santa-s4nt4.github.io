@@ -17,21 +17,18 @@
         class="magnifiable"
         src="https://lh3.googleusercontent.com/-gttDXJJ2jGM/XkzkdidhSKI/AAAAAAAAqdM/ImQW8kFWhdUoF-OgM7P5xKttRMFoo5uuQCE0YBhgL/s1200/algorave1.gif"
         itemprop="image"
-        
       />
       <br />
       <img
         class="magnifiable"
         src="https://lh3.googleusercontent.com/-c-qLqCyOhzQ/XkzkizaSAoI/AAAAAAAAqdU/sj47hh6QwCweBwCXZkPz9ZpZO5w2EXlawCE0YBhgL/s1200/algorave2.gif"
         itemprop="image"
-        
       />
       <br />
       <img
         class="magnifiable"
         src="https://lh3.googleusercontent.com/-UOs49wHV3R4/Xkzkf48fBTI/AAAAAAAAqdQ/Jac7WLbAgvcj-oWVTQ_wdcXaRY4anxZ1wCE0YBhgL/s1200/algorave4.gif"
         itemprop="image"
-        
       />
       <br />
       <div class="discription">
@@ -68,4 +65,29 @@
 </script>
 
 <style>
+div {
+  background-color: black;
+}
+
+.work a:active {
+  color: #ffffff;
+}
+
+.work a:hover {
+  background-color: #000000;
+}
+
+.caption a {
+  text-decoration: none;
+  background-color: #ffffff;
+  color: #ffffff;
+}
+
+.caption a:active {
+  color: #ffffff;
+}
+
+.caption a:hover {
+  background-color: #000000;
+}
 </style>

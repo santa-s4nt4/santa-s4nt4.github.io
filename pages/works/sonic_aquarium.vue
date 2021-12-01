@@ -64,8 +64,11 @@
         </p>
         <p>
           Credit :
-          <br />Ayaka Sakakibara - Planning / Sound Design <br />Santa -
-          Visualization System / Detection System
+          <br />Ayaka Sakakibara - Planning / Sound Design <br />Santa<span
+            class="blink"
+            >▁</span
+          >
+          - Visualization System / Detection System
         </p>
       </div>
     </div>
@@ -73,4 +76,29 @@
 </template>
 
 <style>
+div {
+  background-color: black;
+}
+
+.work a:active {
+  color: #ffffff;
+}
+
+.work a:hover {
+  background-color: #000000;
+}
+
+.caption a {
+  text-decoration: none;
+  background-color: #ffffff;
+  color: #ffffff;
+}
+
+.caption a:active {
+  color: #ffffff;
+}
+
+.caption a:hover {
+  background-color: #000000;
+}
 </style>

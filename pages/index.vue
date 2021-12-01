@@ -56,11 +56,11 @@
 <script>
 import none from "~/components/none.vue";
 import about from "~/components/about.vue";
-import sonic_aquarium from "~/components/works/sonic_aquarium.vue";
-import holarchy from "~/components/works/holarchy.vue";
-import pt_11 from "~/components/works/pt_11.vue";
-import save_metro from "~/components/works/save_metro.vue";
-import algorave_tokyo from "~/components/works/algorave_tokyo.vue";
+import sonic_aquarium from "~/pages/works/sonic_aquarium.vue";
+import holarchy from "~/pages/works/holarchy.vue";
+import pt_11 from "~/pages/works/pt_11.vue";
+import save_metro from "~/pages/works/save_metro.vue";
+import algorave_tokyo from "~/pages/works/algorave_tokyo.vue";
 
 export default {
   components: {
@@ -173,7 +173,7 @@ body {
 .links a,
 a:visited {
   text-decoration: none;
-  color: #9e9e9e;
+  color: #ffffff;
 }
 
 .person_discription {

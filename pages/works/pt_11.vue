@@ -8,28 +8,24 @@
         class="magnifiable"
         src="https://lh3.googleusercontent.com/eQbzJaZykwFAgN7waDoNyCfEvhJnVbEpV1XTZZKgO06KDK5dp7UXjzCBvzA0EHxKNim5rQ7jPglJndh9Fvz6VCz5Cian-VFPz6fmIJ7Bn_4-1JD8glQqZBN5_Z4I49rRh6WSDf2fGBw=w2400"
         itemprop="image"
-        
       />
       <br />
       <img
         class="magnifiable"
         src="https://lh3.googleusercontent.com/jnRsaIAFty2CGYQZFNJky51zYW8h2iK0_IK4WKHOcNoQsa7voPvMh5FdTxEDveqqueRPynt2A2yUI_sm7YEU6mpPo58XduKfhWXvt0ijjUjogj7HKO8xn3GUcGhvGrptWU3cUDBhhKc=w2400"
         itemprop="image"
-        
       />
       <br />
       <img
         class="magnifiable"
         src="https://lh3.googleusercontent.com/K43Ijd-k4GWZmZU4McXaKerTKSTc85OLlvFz1EHP75vvometc3lV2WGJbh3veJmB5YwzRymyqY189w1gxS-SKNYmt6BWX9_WHIiSHAntTFgUAzBtGMJK-hF9oyp6lqx2LqbAwtmXgt4=w2400"
         itemprop="image"
-        
       />
       <br />
       <img
         class="magnifiable"
         src="https://lh3.googleusercontent.com/jtivmk4SBqQBWeqC3lR014FGa1TqE8fAu_Ne80q5G_NnLq0fJY0JF8ae_FGsmVhyZWUYltRxz3Ng-OVkDJUgMLwAArVLWl_FSpTvyTDnKgIGhd3T_itC6tt1XyaREUY0JWHyMMefAd8=w2400"
         itemprop="image"
-        
       />
       <br />
       <div class="discription">
@@ -76,4 +72,7 @@
 </template>
 
 <style>
+div {
+  background-color: black;
+}
 </style>
