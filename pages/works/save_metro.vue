@@ -57,10 +57,8 @@ div {
   background-color: black;
 }
 
-.work a {
-  text-decoration: none;
-  background-color: #ffffff;
-  color: #ffffff;
+.title p {
+  font-size: 2rem;
 }
 
 .work a:active {

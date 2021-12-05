@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <link rel="stylesheet" href="~/assets/css/jetbrains-mono.css" />
-    <div class="title">
+    <div class="site_title">
       <router-link @click.native="none" to="/"
         ><p>s4nt4.cc<span class="blink">▁</span></p></router-link
       >
@@ -22,10 +22,7 @@
     <div class="person_discription">
       <p>
         <router-link @click.native="view_about" to="/">Santa</router-link>
-        is a visual artist based in Tokyo, Japan. <br />
-        He has been working on audio-visual and installation projects while
-        exploring visual expression that combines real-time rendering technology
-        and machine learning technology.
+        is a visual artist based in Tokyo, Japan.
       </p>
     </div>
     <div class="works">
@@ -110,7 +107,7 @@ export default {
 
 template {
   font-family: "JetBrains Mono";
-  font-size: 10px;
+  font-size: 10pt;
 }
 
 body {
@@ -126,17 +123,20 @@ body {
   padding-right: 1rem;
 }
 
-.title {
+.site_title {
   font-family: "JetBrains Mono";
   font-weight: 500;
   display: block;
-  font-size: 1.2rem;
   color: #ffffff;
   letter-spacing: -0.05rem;
   padding-bottom: 1rem;
 }
 
-.title a {
+.site_title p {
+  font-size: 2rem;
+}
+
+.site_title a {
   text-decoration: none;
   color: #ffffff;
 }
@@ -165,7 +165,7 @@ body {
 .links {
   display: block;
   font-weight: 300;
-  font-size: 1.4rem;
+  font-size: 2rem;
   letter-spacing: 0.15rem;
   padding-bottom: 1rem;
 }
@@ -180,7 +180,7 @@ a:visited {
   font-family: "JetBrains Mono";
   display: block;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 2rem;
   color: #ffffff;
   letter-spacing: -0.05rem;
   line-height: 1.5;
@@ -201,7 +201,7 @@ a:visited {
   font-family: "JetBrains Mono";
   display: block;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 2rem;
   color: #ffffff;
   letter-spacing: -0.05rem;
   line-height: 1.5;

@@ -11,8 +11,13 @@
         class="magnifiable"
         src="~/assets/img/profile.png"
         itemprop="image"
-        width="250px"
+        width="400px"
       />
+      <p>
+        Santa has been working on audio-visual and installation projects while
+        exploring visual expression that combines real-time rendering technology
+        and machine learning technology.
+      </p>
     </div>
     <div class="about">
       <p>Skill</p>
@@ -151,7 +156,7 @@
       <p>
         [2020.12 - 2021.09]
         <a href="https://synflux.io/" target="_blank">Synflux</a>
-        s
+        reserch assistant
         <br />
         [2021.02]
         <a href="https://www.career.dentsu.jp/intern/w2021/" target="_blank"
@@ -163,7 +168,7 @@
         <a href="https://dentsucraft.tokyo/" target="_blank"
           >Dentsu Craft Tokyo</a
         >
-        internship
+        part-time worker
         <br />[2019.01 - 2019.03]
         <a href="https://www.1-10.com" target="_blank">1→10, Inc.</a>
         internship
@@ -198,6 +203,11 @@ template {
   padding-bottom: 2rem;
 }
 
+.about p {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
 .about a {
   text-decoration: none;
   color: #ffffff;
@@ -205,6 +215,7 @@ template {
 }
 
 .about summary {
+  font-size: 1.6rem;
   cursor: pointer;
   outline: none;
 }

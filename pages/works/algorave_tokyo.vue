@@ -69,6 +69,10 @@ div {
   background-color: black;
 }
 
+.title p {
+  font-size: 2rem;
+}
+
 .work a:active {
   color: #ffffff;
 }
