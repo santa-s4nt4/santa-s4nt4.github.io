@@ -11,7 +11,7 @@
         class="magnifiable"
         src="~/assets/img/profile.png"
         itemprop="image"
-        width="400px"
+        width="350px"
       />
       <p>
         Santa has been working on audio-visual and installation projects while

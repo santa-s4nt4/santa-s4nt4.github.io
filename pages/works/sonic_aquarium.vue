@@ -57,7 +57,7 @@ div {
 }
 
 .work {
-  width: 75%;
+  width: 80%;
 }
 
 .work a:active {
