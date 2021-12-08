@@ -25,9 +25,9 @@
         is a visual artist based in Tokyo, Japan.
       </p>
     </div>
-    <div class="works">
+    <div class="about_work">
       <p>
-        Noticeable works:
+        Noticeable about_work:
         <br />
         <router-link @click.native="sonic_aquarium" to="/"
           >Sonic-Aquarium</router-link
@@ -107,7 +107,7 @@ export default {
 
 template {
   font-family: "JetBrains Mono";
-  font-size: 10pt;
+  font-size: 11pt;
 }
 
 body {
@@ -118,22 +118,23 @@ body {
   background-color: black;
   min-height: 100vh;
   text-align: left;
-  padding-top: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
 }
 
 .site_title {
   font-family: "JetBrains Mono";
-  font-weight: 500;
+  font-weight: 600;
   display: block;
   color: #ffffff;
-  letter-spacing: -0.05rem;
-  padding-bottom: 1rem;
+  letter-spacing: -0.3rem;
+  padding-bottom: 4rem;
 }
 
 .site_title p {
-  font-size: 2rem;
+  font-size: 6rem;
 }
 
 .site_title a {
@@ -165,9 +166,9 @@ body {
 .links {
   display: block;
   font-weight: 300;
-  font-size: 2rem;
-  letter-spacing: 0.15rem;
-  padding-bottom: 1rem;
+  font-size: 2.8rem;
+  letter-spacing: 0.5rem;
+  padding-bottom: 4rem;
 }
 
 .links a,
@@ -179,12 +180,12 @@ a:visited {
 .person_discription {
   font-family: "JetBrains Mono";
   display: block;
-  font-weight: 400;
-  font-size: 2rem;
+  font-weight: 300;
+  font-size: 2.8rem;
   color: #ffffff;
-  letter-spacing: -0.05rem;
-  line-height: 1.5;
-  padding-bottom: 1rem;
+  letter-spacing: 0.25rem;
+  line-height: 6rem;
+  padding-bottom: 4rem;
 }
 
 .person_discription a {
@@ -197,28 +198,28 @@ a:visited {
   background-color: #000000;
 }
 
-.works {
+.about_work {
   font-family: "JetBrains Mono";
   display: block;
-  font-weight: 400;
-  font-size: 2rem;
+  font-weight: 300;
+  font-size: 2.8rem;
   color: #ffffff;
-  letter-spacing: -0.05rem;
-  line-height: 1.5;
-  padding-bottom: 2rem;
+  letter-spacing: 0.25rem;
+  line-height: 6rem;
+  padding-bottom: 4rem;
 }
 
-.works a {
+.about_work a {
   text-decoration: none;
   background-color: #ffffff;
   color: #ffffff;
 }
 
-.works a:active {
+.about_work a:active {
   color: #ffffff;
 }
 
-.works a:hover {
+.about_work a:hover {
   background-color: #000000;
 }
 </style>

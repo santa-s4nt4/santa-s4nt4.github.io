@@ -11,7 +11,6 @@
         class="magnifiable"
         src="~/assets/img/profile.png"
         itemprop="image"
-        width="350px"
       />
       <p>
         Santa has been working on audio-visual and installation projects while
@@ -187,51 +186,7 @@
 <style>
 template {
   font-family: "JetBrains Mono";
-  font-size: 10px;
+  font-size: 11pt;
   color: #ffffff;
-}
-
-.about {
-  font-family: "JetBrains Mono";
-  font-weight: 500;
-  display: block;
-  font-size: 1rem;
-  color: #ffffff;
-  background-color: black;
-  letter-spacing: -0.05rem;
-  line-height: 1.5;
-  padding-bottom: 2rem;
-}
-
-.about p {
-  font-size: 1.6rem;
-  line-height: 2.4rem;
-}
-
-.about a {
-  text-decoration: none;
-  color: #ffffff;
-  background-color: #ffffff;
-}
-
-.about summary {
-  font-size: 1.6rem;
-  cursor: pointer;
-  outline: none;
-}
-
-.about a:visited {
-  text-decoration: none;
-  color: #ffffff;
-  background-color: #ffffff;
-}
-
-.about a:hover {
-  color: #ffffff;
-  background-color: #000000;
-}
-
-.about details:focus {
-  outline: none;
 }
 </style>
