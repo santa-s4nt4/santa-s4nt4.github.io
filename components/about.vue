@@ -184,9 +184,4 @@
 </template>
 
 <style>
-template {
-  font-family: "JetBrains Mono";
-  font-size: 11pt;
-  color: #ffffff;
-}
 </style>

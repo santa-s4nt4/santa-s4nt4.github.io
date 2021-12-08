@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap");
 
-template {
-  font-family: "JetBrains Mono";
-  font-size: 11pt;
-}
 
 @media (max-width: 3840px) {
   .work {
@@ -47,20 +43,11 @@ template {
   }
 }
 
-@media (max-width: 720px) {
-  div {
-    font-size: 6pt;
-  }
-
-  .work {
-    width: 100%;
-    padding-bottom: 3rem;
-  }
-  
-  .work img {
-    width: 100%;
-  }
+template {
+  font-family: "JetBrains Mono";
+  font-size: 11pt;
 }
+
 div {
   background-color: black;
   font-size: 11pt;
@@ -137,6 +124,7 @@ body {
 .about a:hover {
   color: #ffffff;
   background-color: #000000;
+  font-style: italic;
 }
 
 .about details:focus {
@@ -146,6 +134,8 @@ body {
 .title p {
   color: #ffffff;
   font-size: 2.8rem;
+  font-style: italic;
+  font-weight: 500;
 }
 
 .work {
@@ -158,6 +148,7 @@ body {
 
 .work a:hover {
   background-color: #000000;
+  font-style: italic;
 }
 
 iframe {
@@ -194,6 +185,7 @@ iframe {
 
 .discription a:hover {
   background-color: #000000;
+  font-style: italic;
 }
 
 .caption p {
@@ -222,6 +214,7 @@ iframe {
 
 .caption a:hover {
   background-color: #000000;
+  font-style: italic;
 }
 
 .video {
@@ -237,4 +230,77 @@ iframe {
   height: 100%;
   top: 0;
   left: 0;
+}
+
+
+@media all and (max-width: 768px) {
+  p {
+    font-family: "JetBrains Mono";
+    font-size: 11pt;
+  }
+
+  .container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .about {
+    padding-bottom: 1rem;
+  }
+
+  .about img {
+    width: 80%;
+  }
+
+  .about p {
+    line-height: 2rem;
+    font-size: 1rem;
+  }
+
+  .about summary {
+    line-height: 2rem;
+    font-size: 1rem;
+  }
+
+  .title {
+    width: 100%;
+  }
+
+  .title p {
+    line-height: 2rem;
+    font-size: 1rem;
+  }
+
+  .discription {
+    padding-bottom: 1rem;
+  }
+
+  .discription p {
+    line-height: 2rem;
+    font-size: 1rem;
+  }
+
+  .discription br {
+    padding-bottom: 1rem;
+  }
+
+  .caption {
+    padding-bottom: 1rem;
+  }
+
+  .caption p {
+    line-height: 2rem;
+    font-size: 1rem;
+  }
+
+  .caption br {
+    padding-bottom: 1rem;
+  }
+
+  .work img {
+    width: 100%;
+  }
+
 }

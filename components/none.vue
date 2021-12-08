@@ -1,12 +1,6 @@
 <template></template>
 
 <style>
-template {
-  font-family: "JetBrains Mono";
-  font-size: 10px;
-  color: #ffffff;
-}
-
 .container {
   background-color: black;
   min-height: 100vh;

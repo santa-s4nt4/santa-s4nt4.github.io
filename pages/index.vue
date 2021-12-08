@@ -196,6 +196,8 @@ a:visited {
 
 .person_discription a:hover {
   background-color: #000000;
+  font-style: italic;
+  font-weight: 500;
 }
 
 .about_work {
@@ -213,6 +215,7 @@ a:visited {
   text-decoration: none;
   background-color: #ffffff;
   color: #ffffff;
+  font-weight: 500;
 }
 
 .about_work a:active {
@@ -221,5 +224,48 @@ a:visited {
 
 .about_work a:hover {
   background-color: #000000;
+  font-style: italic;
+}
+
+@media all and (max-width: 768px) {
+  .container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  p {
+    font-family: "JetBrains Mono";
+    font-size: 11pt;
+  }
+
+  .site_title {
+    font-family: "JetBrains Mono";
+    font-weight: 600;
+    display: block;
+    color: #ffffff;
+    letter-spacing: 0.05rem;
+    padding-bottom: 1rem;
+  }
+
+  .site_title p {
+    font-size: 2rem;
+  }
+
+  .links {
+    padding-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  .person_discription {
+    line-height: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  .about_work {
+    line-height: 2rem;
+    padding-bottom: 1rem;
+  }
 }
 </style>
