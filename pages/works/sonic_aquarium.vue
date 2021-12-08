@@ -25,12 +25,12 @@
         Tool : Max for Live (Max 8) / Ableton Live 10 / TouchDesigner / YOLOv3
         <br />
         Award :
-        <br />
         <a
           href="https://kc-i.jp/activity/award/isca/2020/nominate/#link3"
           target="_blank"
           >ISCA Wonderland 2020 - 3rd Prize</a
         >
+        <br />
         Credit :
         <br />Ayaka Sakakibara - Planning / Sound Design <br />Santa<span
           class="blink"
