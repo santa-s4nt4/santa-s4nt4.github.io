@@ -30,6 +30,14 @@
       <details>
         <summary>[2021]</summary>
         <p>
+          [2021.12]
+          <a
+            href="https://tokyo.mutek.org/jp/shows/2021/mutek-jp-x-womb"
+            target="_blank"
+            >MUTEK.JP x WOMB</a
+          >
+          - Visual
+          <br />
           [2021.11]
           <a
             href="https://twitter.com/XmusicLab/status/1449298210560692229?s=20"
