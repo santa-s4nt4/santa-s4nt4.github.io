@@ -22,7 +22,7 @@
       <p>Skill</p>
       <p>
         [Software] TouchDesigner / Cycling 74 Max / Ableton Live
-        <br />[Coding] Processing / p5.js / Nuxt.js
+        <br />[Coding] Python / Processing / p5.js / Nuxt.js
       </p>
     </div>
     <div class="about">
