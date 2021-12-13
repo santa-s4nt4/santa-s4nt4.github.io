@@ -41,6 +41,8 @@
         <router-link @click.native="algorave_tokyo" to="/"
           >Algorave Tokyo</router-link
         >
+        and
+        <router-link @click.native="all_works" to="/">more</router-link>.
       </p>
     </div>
     <div class="content">
@@ -58,6 +60,7 @@ import holarchy from "~/pages/works/holarchy.vue";
 import pt_11 from "~/pages/works/pt_11.vue";
 import save_metro from "~/pages/works/save_metro.vue";
 import algorave_tokyo from "~/pages/works/algorave_tokyo.vue";
+import all_works from "~/pages/works/index.vue";
 
 export default {
   components: {
@@ -68,6 +71,7 @@ export default {
     pt_11,
     save_metro,
     algorave_tokyo,
+    all_works,
   },
   data() {
     return {
@@ -97,6 +101,9 @@ export default {
     },
     algorave_tokyo() {
       this.currentView = "algorave_tokyo";
+    },
+    all_works() {
+      this.currentView = "all_works";
     },
   },
 };
