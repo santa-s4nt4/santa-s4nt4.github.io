@@ -1,7 +1,7 @@
 <template>
   <div class="work">
     <div class="title">
-      <p>Sonic-Aquarium</p>
+      <p>Sonic Aquarium</p>
     </div>
     <div class="video">
       <iframe
