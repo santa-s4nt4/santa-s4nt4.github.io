@@ -161,8 +161,11 @@
     <div class="about">
       <p>Work Experiences</p>
       <p>
-        [2020.12 - 2021.09]
-        <a href="https://synflux.io/" target="_blank">Synflux</a>
+        [2022.02 - Current]
+        <a href="https://www.sonycsl.co.jp/" target="_blank">Sony CSL</a>,
+        <a href="https://shunichikasahara.com/" target="_blank"
+          >Superception lab</a
+        >
         reserch assistant
         <br />
         [2021.02]
@@ -171,7 +174,11 @@
         >
         internship
         <br />
-        [2020.10 - Current]
+        [2020.12 - 2021.09]
+        <a href="https://synflux.io/" target="_blank">Synflux</a>
+        reserch assistant
+        <br />
+        [2020.10 - 2022.01]
         <a href="https://dentsucraft.tokyo/" target="_blank"
           >Dentsu Craft Tokyo</a
         >
