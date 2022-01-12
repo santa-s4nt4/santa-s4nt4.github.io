@@ -30,7 +30,7 @@
         Noticeable about_work:
         <br />
         <router-link @click.native="sonic_aquarium" to="/"
-          >Sonic-Aquarium</router-link
+          >Sonic Aquarium</router-link
         >, <router-link @click.native="holarchy" to="/">holarchy</router-link>,
         <router-link @click.native="pt_11" to="/"
           >Playing Tokyo Vol.11</router-link
