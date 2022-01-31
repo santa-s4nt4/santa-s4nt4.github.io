@@ -24,14 +24,7 @@
     </div>
     <div class="caption">
       <p>Tool : TouchDesigner / GLSL</p>
-      <p>
-        Sound :
-        <a
-          href="http://www.hiramatsutoshiyuki.com/index/HIRAMATSU_TOSHIYUKI.html"
-          target="_blank"
-          >HIRAMATSU TOSHIYUKI</a
-        >
-      </p>
+      <p>Sound : HIRAMATSU TOSHIYUKI</p>
       <p>
         Link :
         <a
