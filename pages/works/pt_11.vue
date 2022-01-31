@@ -26,23 +26,12 @@
         <br />
         2020/09/25に<a href="https://www.twitch.tv/rhizomatiks"
           >twitch.tv/rhizomatiks</a
-        >で配信された<a
-          href="https://twitter.com/rhizomatiks/status/1308730110661414912?s=20"
-          >Playing Tokyo Vol.11</a
-        >でのVJに使用したvisual system．
+        >で配信されたPlaying Tokyo Vol.11でのVJに使用したvisual system．
       </p>
     </div>
     <div class="caption">
       <p>Tool : TouchDesigner / GLSL</p>
-      <p>
-        Sound :
-        <a href="https://naotokui.net/" target="_blank">Nao Tokui</a
-        >&nbsp;/&nbsp;<a href="https://twitter.com/tukuleord12" target="_blank"
-          >Reo Anzai</a
-        >&nbsp;/&nbsp;<a href="https://twitter.com/yuga_k_dj" target="_blank"
-          >Yuga</a
-        >
-      </p>
+      <p>Sound : Nao Tokui / Reo Anzai / Yuga</p>
       <p>
         Link :
         <a href="https://playing.super-flying.tokyo/" target="_blank"
