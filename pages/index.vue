@@ -29,14 +29,17 @@
       <p>
         Noticeable about_work:
         <br />
+        <router-link @click.native="style_jockey_01" to="/"
+          >Style Jockey @MUTEK.JP x WOMB</router-link
+        >,
+        <router-link @click.native="sonic_aquarium_resonance" to="/"
+          >Sonic Aquarium -Resonance-</router-link
+        >,
         <router-link @click.native="sonic_aquarium" to="/"
           >Sonic Aquarium</router-link
-        >, <router-link @click.native="holarchy" to="/">holarchy</router-link>,
+        >,
         <router-link @click.native="pt_11" to="/"
           >Playing Tokyo Vol.11</router-link
-        >,
-        <router-link @click.native="save_metro" to="/"
-          >Save The Metro Compilations</router-link
         >,
         <router-link @click.native="algorave_tokyo" to="/"
           >Algorave Tokyo</router-link
@@ -55,10 +58,10 @@
 <script>
 import none from "~/components/none.vue";
 import about from "~/components/about.vue";
+import style_jockey_01 from "~/pages/works/style_jockey_01.vue";
+import sonic_aquarium_resonance from "~/pages/works/sonic_aquarium_resonance.vue";
 import sonic_aquarium from "~/pages/works/sonic_aquarium.vue";
-import holarchy from "~/pages/works/holarchy.vue";
 import pt_11 from "~/pages/works/pt_11.vue";
-import save_metro from "~/pages/works/save_metro.vue";
 import algorave_tokyo from "~/pages/works/algorave_tokyo.vue";
 import all_works from "~/pages/works/index.vue";
 
@@ -66,10 +69,10 @@ export default {
   components: {
     none,
     about,
+    style_jockey_01,
+    sonic_aquarium_resonance,
     sonic_aquarium,
-    holarchy,
     pt_11,
-    save_metro,
     algorave_tokyo,
     all_works,
   },
@@ -87,17 +90,17 @@ export default {
     view_about() {
       this.currentView = "about";
     },
+    style_jockey_01() {
+      this.currentView = "style_jockey_01";
+    },
+    sonic_aquarium_resonance() {
+      this.currentView = "sonic_aquarium_resonance";
+    },
     sonic_aquarium() {
       this.currentView = "sonic_aquarium";
     },
-    holarchy() {
-      this.currentView = "holarchy";
-    },
     pt_11() {
       this.currentView = "pt_11";
-    },
-    save_metro() {
-      this.currentView = "save_metro";
     },
     algorave_tokyo() {
       this.currentView = "algorave_tokyo";

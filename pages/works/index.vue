@@ -10,13 +10,13 @@
         <summary>[2021]</summary>
         <p>
           -
-          <router-link @click.native="none" to="/"
+          <router-link @click.native="style_jockey_01" to="/"
             >visual system for MUTEK.JP x WOMB</router-link
           >
 
           <br />
           -
-          <router-link @click.native="none" to="/"
+          <router-link @click.native="sonic_aquarium_resonance" to="/"
             >Sonic Aquarium -Resonanced-</router-link
           >
         </p>
@@ -58,6 +58,8 @@
 <script>
 import none from "~/components/none.vue";
 import about from "~/components/about.vue";
+import style_jockey_01 from "~/pages/works/style_jockey_01.vue";
+import sonic_aquarium_resonance from "~/pages/works/sonic_aquarium_resonance.vue";
 import sonic_aquarium from "~/pages/works/sonic_aquarium.vue";
 import holarchy from "~/pages/works/holarchy.vue";
 import pt_11 from "~/pages/works/pt_11.vue";
@@ -68,6 +70,8 @@ export default {
   components: {
     none,
     about,
+    style_jockey_01,
+    sonic_aquarium_resonance,
     sonic_aquarium,
     holarchy,
     pt_11,
@@ -87,6 +91,12 @@ export default {
     },
     view_about() {
       this.currentView = "about";
+    },
+    style_jockey_01() {
+      this.currentView = "style_jockey_01";
+    },
+    sonic_aquarium_resonance() {
+      this.currentView = "sonic_aquarium_resonance";
     },
     sonic_aquarium() {
       this.currentView = "sonic_aquarium";

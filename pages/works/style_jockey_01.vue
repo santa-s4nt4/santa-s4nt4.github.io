@@ -5,53 +5,47 @@
     </div>
     <img
       class="magnifiable"
-      src="https://lh3.googleusercontent.com/q2D8hgWaeAhPw-oBmWJtCqmQQsvbA26Dkoi1QiF2j6GRKVbn3FsfIYBEyl7-hTTgSNr0m8owtQ2N8So9XhcywmZPyAkFzOGdqYlb2Snv-7DJY9uQrf05anm_rvhBjoA3zKmQqz3B4og=w2400"
+      src="https://lh3.googleusercontent.com/FuvhM-Rs0UPK5yGFZ5KXddBxyMG5Mf-ancErjPrtOt89pPOI7BM3gb3u822qOVMgB5IpNZLI_6-obg_L1nlTA5AGvU0_iN2D5mt7nw6BxVV4hIDoxSCi2DylmYHxV9j20phMA98ZsME=w2400"
+      itemprop="image"
+    />
+    <br />
+    <img
+      class="magnifiable"
+      src="https://lh3.googleusercontent.com/RsRiggO-aq6MvoxsbF0TukK67Qsg7--fpLfh0ZG3dmEt_9OyLAQwALcSEYz_Ih3i-CD3fkRyGD6NFhTqSphQsyW4IFU3fDlxIGiu18S7qKSRFHqFzXaO7L8NQ7NaQUdfcO5_WiDVXMU=w2400"
+      itemprop="image"
+    />
+    <br />
+    <img
+      class="magnifiable"
+      src="https://lh3.googleusercontent.com/U_8pz0Jt9X_LTpW7re1PZOpLS11qaeAeynTOlGIgN2JN8dUnLEzBavXPv_RnrDBqnuvt36kdheTYi1b6RD1lLleij16JENjAaAn9rOmhuoZcDRVfIrblCrXLwTpNJ9uRJNzerHN2nbU=w2400"
+      itemprop="image"
+    />
+    <br />
+    <img
+      class="magnifiable"
+      src="https://lh3.googleusercontent.com/vBSDuKWQsHqcYXE3V-8LyGO9UZZ4k3EUsRCOMV4mGheA3k8moygLxB-VfJ6DWQxe8gH9FCgXDu6_qDZzWB_PifOrvjBR8q7THzU8lDm3_GA1JDKIJ_snidypkd0qt475LfWUEo90qo0=w2400"
       itemprop="image"
     />
     <br />
     <div class="discription">
       <p>
         <br />
-        -
-        本作品はディープラーニングを用いた映像の自動選択により，新たなaudio-visualを作り出すオンラインインスタレーションである．
+        Style
+        Jockeyは，StyleGAN2-adaを用いて，オーディオリアクティブにリアルタイムに画像を生成していくVJシステムである．
         <br />
-        -
-        これまでaudio-visual，DJ+VJなどの音と映像が共存する表現領域における映像表現は，すでに存在するクリップを組み合わせることによるサンプリング的手法，リアルタイムにコンピュータで計算されるジェネラティブな手法，目の前で起こる現象の音とその状況自体を見せること，など様々なアプローチが行われてきた．その視覚的な効果によって音楽の拡張や，新たな意味の付与などのがなされてきた．
+        私は，"機械(AI)と人間の共生"に興味を持ち，その中でも人間の表現や創造性にいかに機械が寄り添っていけるか模索している．その過程で，自分が行うVJパフォーマンスにAIを組み込むことで，Audio/Visual表現の拡張を試みている．
         <br />
-        -
-        しかしどの手法においても，送出する映像やプログラムの選択自体はアーティストの恣意的な判断によって曲に対応させることが前提であった．
+        StyleGAN2-adaは，高解像度な画像を生成でき，多くの偏在変数から画像をコントロールすることが可能であるため，今回のVJシステムに選定した．また，AIを組み込んだパフォーマンスだけではなく，パフォーマンスを行うシステムとAIにも着目しており，StyleGAN2-adaの様々なバリエーションの画像を生成するというAIの得意なことと，映像のループ・切り替えのタイミングの選択という人間が得意なことを組み合わせたシステムを実装している．実装にはTouchDesignerを使用している．
         <br />
-        -
-        本作品は曲の特徴量と作者が事前に選択した多数の映像の特徴量を同空間で比較し，自動的に選択することで新たなaudio-visual作品を作り出す，アーティストによる恣意性を廃したオンラインインスタレーションである．作品では鑑賞者が選択したyoutube動画の音が，数秒ごとに区切られ，その特徴量と，事前に準備された無数の映画や映像の短く区切られたクリップの特徴量を同空間で比較して最も近い映像を選び出し，音楽とともにそれにフィットした映像を次々表示する．
-        この映像選択手法によって，アーティストがこれまで構築してきた音に対する映像のマッピング関係をディープラーニングによって再構築し，あり得るかもしれない対応関係の可能性を示唆する．また，これまで繋がり得なかった異なる映画・映像の繋がりのないシーンが一つの映像となり，総体として立ち現れる（部分であり全体であること，holarchy）ことで，鑑賞者はそれらの関連性から一つのストーリーを見出すことになる．
-        本作品によって，audio-visualやDJ+VJ表現は一度アーティストの手癖や判断基準から開放され逸脱し，アーティストにも新たな視点を与えるだろう．
+        このVJシステムは，MUTEK.JP 2020
+        オープンコールに採択され，WOMBにてVJパフォーマンスを披露した．
       </p>
     </div>
     <div class="caption">
       <p>
-        Link :
-        <a href="https://ai-visual.github.io/holarchy/" target="_blank"
-          >holarchy</a
-        >
-        /
-        <a href="https://cclab.sfc.keio.ac.jp/projects/x-visual-holarchy/"
-          >Project page</a
-        >
-      </p>
-      <p>
-        Exhibition :
-        <a
-          href="https://sa2020.siggraph.org/en/attend/art-gallery/session_slot/191/2"
-          >SIGGRAPH ASIA 2020 ART GALLERY(2020.12.4-13)</a
-        >
-      </p>
-      <p>
         Credit :
         <br />
-        Keio SFC Nao Tokui Lab (Computational Creativity Lab) x-visual team
-        <br />Scott Allen - Direction <br />Yusuke Yamada - Deep learning
-        <br />Reo Anzai - UI design <br />Santa<span class="blink">▁</span> -
-        Front-end <br />Aina Ono - Tech support
+        Sapphire Slows - Sound <br />Santa<span class="blink">▁</span> - Visual
       </p>
     </div>
   </div>
