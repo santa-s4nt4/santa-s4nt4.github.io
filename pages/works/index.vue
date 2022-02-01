@@ -17,7 +17,7 @@
           <br />
           -
           <router-link @click.native="sonic_aquarium_resonance" to="/"
-            >Sonic Aquarium -Resonanced-</router-link
+            >Sonic Aquarium -Resonance-</router-link
           >
         </p>
       </details>

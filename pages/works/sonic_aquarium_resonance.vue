@@ -5,7 +5,7 @@
     </div>
     <div class="video">
       <iframe
-        src="https://www.youtube.com/embed/k7B4Cz4NZLI?color=white"
+        src="https://drive.google.com/file/d/1lBWoawMh9sJVcoI5SXEr7SaADzEcbZwB/preview"
         frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
