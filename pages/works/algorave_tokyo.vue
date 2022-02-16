@@ -26,22 +26,16 @@
       </p>
     </div>
     <div class="caption">
-      <p>Tool : TouchDesigner / GLSL</p>
+      <p>Tool: TouchDesigner / GLSL</p>
       <p>
-        Sound :
-        <a href="https://twitter.com/renick" target="_blank">Renick Bell</a>
-      </p>
-      <p>
-        Link :
+        Link:
         <a href="http://ochiaisoup.com/?p=3734" target="_blank"
           >Algorave Tokyo 2020/02/15</a
         >
       </p>
       <p>
-        Source Code :
-        <a href="https://github.com/santa-s4nt4/AlgoraveTokyo" target="_blank"
-          >GitHub</a
-        >
+        Credit:<br />Renick Bell - Sound <br />Santa<span class="blink">▁</span>
+        - Visual
       </p>
     </div>
   </div>

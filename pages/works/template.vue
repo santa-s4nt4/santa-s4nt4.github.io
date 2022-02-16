@@ -49,10 +49,10 @@
       </p>
     </div>
     <div class="caption">
-      <p>Tool : text</p>
-      <p>Award : text</p>
+      <p>Tool: text</p>
+      <p>Award: text</p>
       <p>
-        Credit :
+        Credit:
         <br />text <br />text
       </p>
     </div>

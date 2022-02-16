@@ -44,9 +44,9 @@
     </div>
     <div class="caption">
       <p>
-        Tool : Max for Live / Ableton Live 11 / TouchDesigner
+        Tool: Max for Live / Ableton Live 11 / TouchDesigner
         <br />
-        Credit :
+        Credit:
         <br />Ayaka Sakakibara - Sound Design <br />Santa<span class="blink"
           >▁</span
         >

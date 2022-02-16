@@ -1,11 +1,7 @@
 <template>
   <div>
-    <div class="title">
-      <p>Works</p>
-    </div>
     <div class="about">
-      <br />
-      <br />
+      <p>Works</p>
       <details>
         <summary>[2021]</summary>
         <p>
@@ -13,7 +9,6 @@
           <router-link @click.native="style_jockey_01" to="/"
             >visual system for MUTEK.JP x WOMB</router-link
           >
-
           <br />
           -
           <router-link @click.native="sonic_aquarium_resonance" to="/"

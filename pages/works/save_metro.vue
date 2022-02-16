@@ -23,10 +23,9 @@
       </p>
     </div>
     <div class="caption">
-      <p>Tool : TouchDesigner / GLSL</p>
-      <p>Sound : HIRAMATSU TOSHIYUKI</p>
+      <p>Tool: TouchDesigner / GLSL</p>
       <p>
-        Link :
+        Link:
         <a
           href="https://twitter.com/metro_kyoto/status/1273953213180375040?s=20"
           target="_blank"
@@ -34,10 +33,8 @@
         >
       </p>
       <p>
-        Source Code :
-        <a href="https://github.com/santa-s4nt4/200627_metro" target="_blank"
-          >GitHub</a
-        >
+        Sound - HIRAMATSU TOSHIYUKI <br />Santa<span class="blink">▁</span> -
+        Visual
       </p>
     </div>
   </div>

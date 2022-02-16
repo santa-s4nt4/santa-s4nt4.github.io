@@ -1,12 +1,6 @@
 <template>
   <div>
     <div class="about">
-      <!-- <img
-        class="magnifiable"
-        src="https://lh3.googleusercontent.com/XEvzlRTAP0WqxGujbXkrUQqfP4EWAcL2zIZoUZzblXVUHlJSJ5LI55GgPiaK39czR1iPucFej-xJvAIXsBqa1qEfCR53rGMUZQPaaG4gZJdsn4YgXxXg1UiclFz7i--BOag7BEdzDXQ=w2400"
-        itemprop="image"
-        width="200px"
-      /> -->
       <img
         class="magnifiable"
         src="~/assets/img/profile.png"
@@ -144,7 +138,7 @@
       <p>Research Group</p>
       <p>
         [2020.04 - Current]
-        <a href="https://xml.sfc.keio.ac.jp/" target="_blank">x-Music Lab</a>,
+        <a href="https://xml.sfc.keio.ac.jp/" target="_blank">x-Music Lab</a>
         at
         <a href="https://www.sfc.keio.ac.jp" target="_blank"
           >Keio University SFC</a
@@ -152,7 +146,8 @@
         <br />[2019.04 - Current]
         <a href="https://cclab.sfc.keio.ac.jp" target="_blank"
           >Computational Creativity Lab</a
-        >, at
+        >
+        at
         <a href="https://www.sfc.keio.ac.jp" target="_blank"
           >Keio University SFC</a
         >
@@ -162,10 +157,10 @@
       <p>Work Experiences</p>
       <p>
         [2022.02 - Current]
-        <a href="https://www.sonycsl.co.jp/" target="_blank">Sony CSL</a>,
         <a href="https://shunichikasahara.com/" target="_blank"
           >Superception lab</a
         >
+        at <a href="https://www.sonycsl.co.jp/" target="_blank">Sony CSL</a>
         reserch assistant
         <br />
         [2021.02]
@@ -183,9 +178,6 @@
           >Dentsu Craft Tokyo</a
         >
         part-time worker
-        <br />[2019.01 - 2019.03]
-        <a href="https://www.1-10.com" target="_blank">1→10, Inc.</a>
-        internship
         <br />[2018.03]
         <a
           href="https://tech.mercari.com/entry/2017/12/20/170000"

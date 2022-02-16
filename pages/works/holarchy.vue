@@ -25,7 +25,7 @@
     </div>
     <div class="caption">
       <p>
-        Link :
+        Link:
         <a href="https://ai-visual.github.io/holarchy/" target="_blank"
           >holarchy</a
         >
@@ -35,14 +35,14 @@
         >
       </p>
       <p>
-        Exhibition :
+        Exhibition:
         <a
           href="https://sa2020.siggraph.org/en/attend/art-gallery/session_slot/191/2"
           >SIGGRAPH ASIA 2020 ART GALLERY(2020.12.4-13)</a
         >
       </p>
       <p>
-        Credit :
+        Credit:
         <br />
         Keio SFC Nao Tokui Lab (Computational Creativity Lab) x-visual team
         <br />Scott Allen - Direction <br />Yusuke Yamada - Deep learning

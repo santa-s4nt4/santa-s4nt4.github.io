@@ -30,21 +30,19 @@
       </p>
     </div>
     <div class="caption">
-      <p>Tool : TouchDesigner / GLSL</p>
-      <p>Sound : Nao Tokui / Reo Anzai / Yuga</p>
+      <p>Tool: TouchDesigner / GLSL</p>
       <p>
-        Link :
+        Link:
         <a href="https://playing.super-flying.tokyo/" target="_blank"
           >Playing Tokyo</a
         >
       </p>
       <p>
-        Source Code :
-        <a
-          href="https://github.com/santa-s4nt4/playingTokyo200925"
-          target="_blank"
-          >GitHub</a
-        >
+        Credit: <br />
+        Nao Tokui - Sound<br />
+        Reo Anzai - Sound<br />
+        Yuga - Sound<br />
+        Santa<span class="blink">▁</span> - Visual
       </p>
     </div>
   </div>

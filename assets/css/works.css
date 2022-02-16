@@ -10,6 +10,10 @@
   .work img {
     width: 100%;
   }
+
+  .work video {
+    width: 100%;
+  }
 }
 
 @media (max-width: 2880px) {
@@ -152,10 +156,6 @@ body {
   font-style: italic;
 }
 
-iframe {
-  padding-bottom: 4rem;
-}
-
 .discription {
   padding-bottom: 4rem;
 }
@@ -200,7 +200,7 @@ iframe {
 .caption br {
   display: block;
   content: "";
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.01rem;
 }
 
 .caption a {
@@ -231,6 +231,7 @@ iframe {
   height: 100%;
   top: 0;
   left: 0;
+  padding-bottom: 1rem;
 }
 
 
@@ -297,11 +298,27 @@ iframe {
   }
 
   .caption br {
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.01rem;
   }
 
   .work img {
     width: 100%;
+  }
+
+  .video {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .video iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding-bottom: 1rem;
   }
 
 }

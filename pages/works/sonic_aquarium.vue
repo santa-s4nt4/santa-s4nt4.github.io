@@ -20,7 +20,7 @@
     </div>
     <div class="caption">
       <p>
-        Tool : Max for Live / Ableton Live 10 / TouchDesigner
+        Tool: Max for Live / Ableton Live 10 / TouchDesigner
         <br />
         Award :
         <a
@@ -29,7 +29,7 @@
           >ISCA Wonderland 2020 - 3rd Prize</a
         >
         <br />
-        Credit :
+        Credit:
         <br />Ayaka Sakakibara - Sound Design <br />Santa<span class="blink"
           >▁</span
         >
