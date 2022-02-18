@@ -3,31 +3,30 @@
     <div class="title">
       <p>Style Jockey @MUTEK.JP x WOMB</p>
     </div>
-    <div class="video">
-      <iframe
-        src="https://drive.google.com/file/d/1HOjv8oIbHxARV7UEJX2cyshuc1REmneh/preview"
-        frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </div>
-    <div class="video">
-      <iframe
-        src="https://drive.google.com/file/d/1PAfi7BdJWLIjeX8uB1EMl9CHBFiKQ3qg/preview"
-        frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </div>
-    <div class="video">
-      <iframe
-        src="https://drive.google.com/file/d/1hxWZ79dvqfeAiyZa0lTis_hVyMWTX7kW/preview"
-        frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        autoplay
-      ></iframe>
-    </div>
+    <video
+      src="https://drive.google.com/uc?id=1MDt3GCDOgEZLb0q3cu_7XmpKjjRN7ivn&export=download"
+      controls
+      loop
+      autoplay
+      muted
+      playsinline
+    ></video>
+    <video
+      src="https://drive.google.com/uc?id=1YGATl8nvtarq9bQxEHR3dzYH-7-cvN6J&export=download"
+      controls
+      loop
+      autoplay
+      muted
+      playsinline
+    ></video>
+    <video
+      src="https://drive.google.com/uc?id=18-Cw6529mrjVtuk7_fsGT3izTcCSuwFt&export=download"
+      controls
+      loop
+      autoplay
+      muted
+      playsinline
+    ></video>
     <img
       class="magnifiable"
       src="https://lh3.googleusercontent.com/U_8pz0Jt9X_LTpW7re1PZOpLS11qaeAeynTOlGIgN2JN8dUnLEzBavXPv_RnrDBqnuvt36kdheTYi1b6RD1lLleij16JENjAaAn9rOmhuoZcDRVfIrblCrXLwTpNJ9uRJNzerHN2nbU=w2400"
