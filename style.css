@@ -1,0 +1,394 @@
+/* --- Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;700&family=Noto+Sans+JP:wght@100;300;400&display=swap');
+
+/* --- Base Styles --- */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1c1bd8;
+    /* 指定のブルー */
+    color: #fff;
+    /* 英数字は Noto Sans、日本語は Noto Sans JP */
+    font-family: "Noto Sans", "Noto Sans JP", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 100;
+    /* 日本語を Thin に */
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* --- Layout (Fixed Header) --- */
+.global-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-sizing: border-box;
+    z-index: 100;
+}
+
+.logo a {
+    font-size: 1.2rem;
+    font-weight: 400;
+    display: block;
+    letter-spacing: 0.2em;
+}
+
+.top-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.menu-item {
+    text-align: center;
+}
+
+.menu-item {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 400;
+
+}
+
+.menu-item a {
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    font-weight: 400;
+    /* 英字メニューは Regular */
+    color: rgba(255, 255, 255, 0.4);
+    /* 初期状態は薄く */
+    transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.menu-item a:hover {
+    color: #fff;
+    /* ホバー時に白く */
+}
+
+.menu-item.active,
+.menu-item.active a {
+    color: #fff;
+    opacity: 1;
+}
+
+/* --- Hover Preview (Works List用) --- */
+#hover-preview-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#hover-preview-image {
+    width: 60vw;
+    aspect-ratio: 16 / 9;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.9);
+    border-radius: 2px;
+}
+
+/* --- Works List (Index) --- */
+.list-container {
+    padding: 180px 50px 100px;
+    position: relative;
+    z-index: 10;
+}
+
+.work-row {
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+    transition: border-color 0.3s;
+}
+
+/* ホバー時は線が白くなるのみ（反転なし） */
+.work-row:hover {
+    border-color: #fff;
+}
+
+.row-link {
+    display: block;
+    padding: 35px 0;
+}
+
+.title-area h3 {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 100;
+    /* タイトルの日本語を Thin に */
+    letter-spacing: 0.15em;
+}
+
+/* --- Content Detail (About / Viewer) --- */
+.text-content {
+    max-width: 70vw;
+    margin: 180px auto;
+    /* ヘッダー固定に合わせて開始位置を調整 */
+    padding: 0 50px;
+    line-height: 1.5em;
+}
+
+.text-content h1 {
+    font-size: 2.2rem;
+    font-weight: 100;
+    letter-spacing: 0.15em;
+    margin-bottom: 2.2rem;
+    line-height: 2.5rem;
+}
+
+.text-content h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    font-weight: 400;
+    letter-spacing: 0.1em;
+}
+
+.text-content p {
+    font-size: 1.05rem;
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+    line-height: 1.4rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+}
+
+/* --- UI Elements --- */
+.loading {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    margin-top: 35vh;
+    font-weight: 400;
+}
+
+/* --- Filter Buttons --- */
+.filter-nav {
+    display: flex;
+    gap: 2rem;
+    margin-right: auto;
+    margin-block-start: 1em;
+}
+
+.filter-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-transform: lowercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    color: #fff;
+}
+
+/* --- Works List Update --- */
+.row-link {
+    display: flex;
+    justify-content: space-between;
+    /* タイトルとタグを両端に配置 */
+    align-items: baseline;
+    padding: 35px 0;
+}
+
+.title-area h3 {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 100;
+    letter-spacing: 0.15em;
+}
+
+.type-tag {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: lowercase;
+    font-family: "Noto Sans", sans-serif;
+    letter-spacing: 0.1em;
+}
+
+/* ホバー時にタグの視認性を上げる */
+.work-row:hover .type-tag {
+    color: #fff;
+}
+
+/* 外部リンクのスタイル */
+.external-link {
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: opacity 0.3s;
+    opacity: 0.6;
+}
+
+.external-link:hover {
+    opacity: 1;
+}
+
+/* 内部リンク（タグ風）と区別する場合 */
+.scrapbox-tag {
+    color: #fff;
+    text-underline-offset: 4px;
+    transition: opacity 0.3s;
+    opacity: 0.6;
+}
+
+.scrapbox-tag:hover {
+    opacity: 1;
+}
+
+/* リンクや画像 */
+.indent {
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    padding-left: 15px;
+    margin: 0.75em 0;
+    font-weight: 400;
+}
+
+.text-content img {
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+/* --- Scrapbox Icons --- */
+/* 通常の img タグのスタイル設定を上書きして、文字と同じサイズにします */
+.scrapbox-icon {
+    display: inline-block;
+    width: 1.2em !important;
+    /* 文字の高さより少し大きいくらい */
+    height: 1.2em !important;
+    vertical-align: middle;
+    /* 文字の高さの中央に揃える */
+    margin: 0 2px !important;
+    /* 前後の文字との隙間を最小限に */
+    border-radius: 2px !important;
+    /* 角丸も小さめに */
+    border: none !important;
+    /* 枠線があれば消す */
+}
+
+.text-content .scrapbox-icon {
+    margin: 0 2px !important;
+}
+
+#about-content img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1.2rem;
+}
+
+/* --- Video & Image Sync --- */
+
+/* 1. 全体（viewer.html / about.html 共通）のビデオサイズ設定 */
+.video-container {
+    position: relative;
+    width: 100%;
+    /* 親要素の幅いっぱいに広がる */
+    max-width: 100%;
+    /* 画像と同じ最大幅 */
+    padding-bottom: 56.25%;
+    /* 16:9 のアスペクト比を維持 */
+    height: 0;
+    margin: 0;
+    /* 画像の margin (3em 0) と合わせる */
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* --- Log List Styles --- */
+.log-list {
+    margin-top: 20px;
+}
+
+.log-row {
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.15);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.log-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 15px 0;
+    /* Indexの 35px より大幅に縮小 */
+}
+
+.log-title-area {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+}
+
+.log-date {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 400;
+    width: 60px;
+    /* 日付の幅を固定して揃える */
+}
+
+.log-title {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 100;
+    letter-spacing: 0.05em;
+}
+
+.log-type-tag {
+    font-size: 1.2rem;
+    font-weight: 100;
+    color: rgba(255, 255, 255, 0.4);
+    font-family: "Noto Sans", sans-serif;
+    text-transform: lowercase;
+}
+
+.log-row:hover {
+    /* 境界線を白く光らせ、背景をわずかにグレーにする（Worksリストと統一） */
+    border-color: rgba(255, 255, 255, 1);
+}
+
+/* 既存のホバー設定（文字色の変化）も維持されます */
+.log-row:hover .log-date,
+.log-row:hover .log-type-tag {
+    color: rgba(255, 255, 255, 0.6);
+}

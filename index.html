@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Works - Santa NARUSE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="index-body">
+  <div id="hover-preview-container">
+    <div id="hover-preview-image"></div>
+  </div>
+
+  <header class="global-header">
+    <div class="logo">
+      <a href="/">Santa NARUSE</a>
+    </div>
+    <nav class="top-menu">
+      <div class="menu-item active">
+        <a href="/">Works</a>
+      </div>
+      <div class="menu-item">
+        <a href="about.html">About</a>
+      </div>
+      <div class="menu-item">
+        <a href="log.html">Log</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="list-container">
+    <nav class="filter-nav">
+      <button onclick="displayWorks('all')" class="filter-btn active">All</button>
+      <button onclick="displayWorks('art work')" class="filter-btn">Art Work</button>
+      <button onclick="displayWorks('client work')" class="filter-btn">Client Work</button>
+    </nav>
+
+    <div id="works-grid">
+      <p class="loading">Fetching works...</p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    window.onload = () => fetchScrapboxData('works');
+  </script>
+</body>
+
+</html>

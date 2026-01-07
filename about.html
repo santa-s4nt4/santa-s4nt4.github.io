@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Santa NARUSE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="global-header">
+    <div class="logo">
+      <a href="index.html">Santa NARUSE</a>
+    </div>
+    <nav class="top-menu">
+      <div class="menu-item">
+        <a href="index.html">Works</a>
+      </div>
+      <div class="menu-item active">
+        <a href="about.html">About</a>
+      </div>
+      <div class="menu-item">
+        <a href="log.html">Log</a>
+    </nav>
+  </header>
+
+  <main id="about-content" class="text-content">
+    <p class="loading">Loading from Scrapbox...</p>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    // Scrapboxの「about」ページを取得
+    window.onload = fetchAboutContent;
+  </script>
+</body>
+
+</html>

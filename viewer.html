@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viewer - Santa NARUSE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="global-header">
+    <div class="logo">
+      <a href="index.html">Santa NARUSE</a>
+    </div>
+    <nav class="top-menu">
+      <div class="menu-item active">
+        <a href="index.html">Works</a>
+      </div>
+      <div class="menu-item">
+        <a href="about.html">About</a>
+      </div>
+      <div class="menu-item">
+        <a href="log.html">Log</a>
+      </div>
+    </nav>
+  </header>
+
+  <div id="loading" class="loading">Loading content...</div>
+
+  <article class="text-content" id="main-content"></article>
+
+  <script src="script.js"></script>
+  <script>
+    /**
+     * このページ専用の読み込み処理
+     */
+    async function loadViewerPage() {
+      const params = new URLSearchParams(window.location.search);
+      const pageTitle = params.get('page');
+
+      if (!pageTitle) {
+        document.getElementById('loading').textContent = 'Page not found.';
+        return;
+      }
+
+      try {
+        // 1. Scrapbox からテキストデータを取得
+        // PROXY_BASE と PROJECT_NAME は script.js に定義されているものを使用
+        const response = await fetch(`${PROXY_BASE}/api/pages/${PROJECT_NAME}/${encodeURIComponent(pageTitle)}/text`);
+        if (!response.ok) throw new Error('Failed to fetch');
+
+        const text = await response.text();
+
+        // 2. ローディング表示を消す
+        document.getElementById('loading').style.display = 'none';
+
+        // 3. 共通の script.js にある scrapboxToHtml を呼び出して変換
+        // ※ 内部で 1行目を <h1> に変換するロジックが含まれている前提です
+        document.getElementById('main-content').innerHTML = scrapboxToHtml(text);
+
+        // 4. ブラウザのタブタイトルを更新
+        document.title = `${pageTitle} - Santa NARUSE`;
+
+      } catch (err) {
+        console.error(err);
+        document.getElementById('loading').textContent = 'Error loading content.';
+      }
+    }
+
+    // 読み込み開始
+    window.onload = loadViewerPage;
+  </script>
+</body>
+
+</html>

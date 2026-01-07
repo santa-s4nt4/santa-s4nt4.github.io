@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log - Santa NARUSE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="global-header">
+    <div class="logo">
+      <a href="index.html">Santa NARUSE</a>
+    </div>
+    <nav class="top-menu">
+      <div class="menu-item">
+        <a href="index.html">Works</a>
+      </div>
+      <div class="menu-item">
+        <a href="about.html">About</a>
+      </div>
+      <div class="menu-item active">
+        <a href="log.html">Log</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="list-container">
+    <nav class="filter-nav">
+      <button onclick="displayLog('all')" class="filter-btn active">All</button>
+      <button onclick="displayLog('雑記')" class="filter-btn">雑記</button>
+      <button onclick="displayLog('technique')" class="filter-btn">Technique</button>
+    </nav>
+
+    <div id="log-grid" class="log-list">
+      <p class="loading">Fetching logs...</p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    // Logページとしてデータを取得
+    window.onload = () => fetchScrapboxData('log');
+  </script>
+</body>
+
+</html>
