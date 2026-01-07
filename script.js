@@ -68,18 +68,55 @@ function scrapboxToHtml(text) {
 /**
  * データの取得
  */
-// --- 既存の fetchScrapboxData に追記 ---
-async function fetchScrapboxData(pageType) {
+// --- fetchScrapboxData に関連記事用の分岐を追加 ---
+async function fetchScrapboxData(pageType, currentPageTitle = null, foundTags = []) {
   try {
     const response = await fetch(`${PROXY_BASE}/api/pages/${PROJECT_NAME}?limit=100`);
     const data = await response.json();
     allPages = data.pages;
 
     if (pageType === 'works') displayWorks('all');
-    else if (pageType === 'log') displayLog('all'); // 追加
+    else if (pageType === 'log') displayLog('all');
+    // 第3引数にタグを渡す
+    else if (pageType === 'related') displayRelatedLinks(currentPageTitle, foundTags);
     else displayTrash();
   } catch (err) {
     console.error(err);
+  }
+}
+
+// --- displayRelatedLinks ---
+function displayRelatedLinks(currentTitle, tagsToSearch) {
+  const container = document.getElementById('related-grid');
+  const section = document.querySelector('.related-section');
+  if (!container || !section) return;
+
+  // 1. 関連ページを抽出
+  const relatedPages = allPages.filter(page => {
+    if (page.title === currentTitle) return false;
+    const desc = page.descriptions.join(' ').toLowerCase();
+    return tagsToSearch.some(tag => desc.includes(tag.toLowerCase()));
+  });
+
+  if (relatedPages.length > 0) {
+    section.style.display = 'block';
+
+    // 2. タグの種類によって描画方法を変える
+    const isWorkRelated = tagsToSearch.some(tag =>
+      tag.toLowerCase().includes('work')
+    );
+
+    if (isWorkRelated) {
+      // Works系（art work / client work）ならサムネイル・ホバーあり
+      container.classList.remove('log-list'); // Log用のスタイルを除去
+      renderGrid(relatedPages, container);
+    } else {
+      // Log系（雑記 / technique）なら日付付きリスト
+      container.classList.add('log-list');
+      renderLogList(relatedPages, container);
+    }
+  } else {
+    section.style.display = 'none';
   }
 }
 
@@ -91,22 +128,32 @@ function displayLog(filterTag) {
   const buttons = document.querySelectorAll('.filter-btn');
   buttons.forEach(btn => {
     btn.classList.remove('active');
-    // ボタンのテキストと引数を比較（大文字小文字を区別しない）
     if (btn.textContent.toLowerCase() === filterTag.toLowerCase()) btn.classList.add('active');
   });
 
   const filtered = allPages.filter(page => {
-    // descriptionsをすべて小文字に変換して判定
+    // --- 追記：特定のタイトル（インデックス用ページなど）を完全に除外 ---
+    const lowerTitle = page.title.toLowerCase();
+    if (lowerTitle === 'よもやま話' || lowerTitle === 'technique') {
+      return false;
+    }
+
     const desc = page.descriptions.join(' ').toLowerCase();
 
-    // [雑記] または [technique] が含まれるか判定（大文字小文字を問わない）
-    const isLog = desc.includes('[雑記]') || desc.includes('[technique]');
+    // [雑記]（または [よもやま話]）または [technique] が含まれる記事のみを対象とする
+    const isLog = desc.includes('[雑記]') || desc.includes('[よもやま話]') || desc.includes('[technique]');
     if (!isLog) return false;
 
     if (filterTag === 'all') return true;
 
-    // 選択されたタグが含まれるか判定（[technique] など）
-    return desc.includes(`[${filterTag.toLowerCase()}]`);
+    // ボタンで選択されたタグが含まれるか判定
+    // "雑記" ボタンが押された時に、内部的に [よもやま話] も含むように調整が必要な場合はここで行います
+    let searchTag = filterTag.toLowerCase();
+    if (searchTag === '雑記') {
+      return desc.includes('[雑記]') || desc.includes('[よもやま話]');
+    }
+
+    return desc.includes(`[${searchTag}]`);
   });
 
   renderLogList(filtered, container);
@@ -133,7 +180,7 @@ function renderLogList(pages, container) {
 
     // タグの判定
     const desc = page.descriptions.join(' ');
-    const tagLabel = desc.includes('[technique]') ? 'technique' : '雑記';
+    const tagLabel = desc.includes('[technique]') ? 'technique' : 'よもやま話';
 
     row.innerHTML = `
       <a href="viewer.html?page=${encodeURIComponent(page.title)}" class="log-link">

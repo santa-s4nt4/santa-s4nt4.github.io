@@ -139,7 +139,10 @@ a {
 /* --- Content Detail (About / Viewer) --- */
 .text-content {
     max-width: 70vw;
-    margin: 180px auto;
+    margin-top: 180px;
+    margin-right: auto;
+    margin-bottom: 50px;
+    margin-left: auto;
     /* ヘッダー固定に合わせて開始位置を調整 */
     padding: 0 50px;
     line-height: 1.5em;
@@ -372,12 +375,13 @@ a {
     font-size: 2.2rem;
     font-weight: 100;
     letter-spacing: 0.05em;
+    line-height: 2.4rem;
 }
 
 .log-type-tag {
     font-size: 1.2rem;
-    font-weight: 100;
-    color: rgba(255, 255, 255, 0.4);
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.6);
     font-family: "Noto Sans", sans-serif;
     text-transform: lowercase;
 }
@@ -390,5 +394,21 @@ a {
 /* 既存のホバー設定（文字色の変化）も維持されます */
 .log-row:hover .log-date,
 .log-row:hover .log-type-tag {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 1);
+}
+
+/* --- Related Section Styles --- */
+.related-section {
+    padding-top: 2rem;
+    margin: 10px auto;
+}
+
+.related-title {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: none;
+    color: #fff;
+    margin-bottom: 30px;
+    font-weight: 100;
+    /* Noto Sans Regular */
 }

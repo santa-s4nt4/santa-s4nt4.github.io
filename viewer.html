@@ -31,45 +31,47 @@
 
   <article class="text-content" id="main-content"></article>
 
+  <section class="text-content related-section">
+    <h2 class="related-title">Related Pages</h2>
+    <div id="related-grid" class="log-list"></div>
+  </section>
+
   <script src="script.js"></script>
   <script>
-    /**
-     * このページ専用の読み込み処理
-     */
     async function loadViewerPage() {
       const params = new URLSearchParams(window.location.search);
       const pageTitle = params.get('page');
-
-      if (!pageTitle) {
-        document.getElementById('loading').textContent = 'Page not found.';
-        return;
-      }
+      if (!pageTitle) return;
 
       try {
-        // 1. Scrapbox からテキストデータを取得
-        // PROXY_BASE と PROJECT_NAME は script.js に定義されているものを使用
         const response = await fetch(`${PROXY_BASE}/api/pages/${PROJECT_NAME}/${encodeURIComponent(pageTitle)}/text`);
-        if (!response.ok) throw new Error('Failed to fetch');
-
         const text = await response.text();
-
-        // 2. ローディング表示を消す
         document.getElementById('loading').style.display = 'none';
-
-        // 3. 共通の script.js にある scrapboxToHtml を呼び出して変換
-        // ※ 内部で 1行目を <h1> に変換するロジックが含まれている前提です
         document.getElementById('main-content').innerHTML = scrapboxToHtml(text);
 
-        // 4. ブラウザのタブタイトルを更新
-        document.title = `${pageTitle} - Santa NARUSE`;
+        // --- タグ抽出ロジックの拡張 ---
+        const foundTags = [];
+        const lowerText = text.toLowerCase();
 
+        // Log用タグ
+        if (text.includes('[よもやま話]')) foundTags.push('[よもやま話]');
+        if (lowerText.includes('[technique]')) foundTags.push('[technique]');
+
+        // Works用タグ (追加)
+        if (lowerText.includes('[art work]')) foundTags.push('[art work]');
+        if (lowerText.includes('[client work]')) foundTags.push('[client work]');
+
+        if (foundTags.length > 0) {
+          // 第二引数に全ページデータ取得後の処理を渡す
+          await fetchScrapboxData('related', pageTitle, foundTags);
+        }
+
+        scrollToHash();
+        document.title = `${pageTitle} - Santa NARUSE`;
       } catch (err) {
         console.error(err);
-        document.getElementById('loading').textContent = 'Error loading content.';
       }
     }
-
-    // 読み込み開始
     window.onload = loadViewerPage;
   </script>
 </body>
