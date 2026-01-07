@@ -199,7 +199,6 @@ function displayWorks(filterTag) {
   const container = document.getElementById('works-grid');
   if (!container) return;
 
-  // ボタンのアクティブ状態を切り替え
   const buttons = document.querySelectorAll('.filter-btn');
   buttons.forEach(btn => {
     btn.classList.remove('active');
@@ -207,10 +206,17 @@ function displayWorks(filterTag) {
   });
 
   const filtered = allPages.filter(page => {
+    // --- 追加：特定のタイトルのページを完全に除外 ---
+    const lowerTitle = page.title.toLowerCase();
+    if (lowerTitle === 'art work' || lowerTitle === 'client work') {
+      return false;
+    }
+
     const desc = page.descriptions.join(' ');
     if (filterTag === 'all') return desc.includes('[art work]') || desc.includes('[client work]');
     return desc.includes(`[${filterTag}]`);
   });
+
   renderGrid(filtered, container);
 }
 
