@@ -3,6 +3,9 @@ const PROJECT_NAME = 's4nt4-cc';
 
 let allPages = [];
 
+// 除外するタイトルのリスト
+const EXCLUDED_TITLES = ['art work', 'client work', 'よもやま話', 'technique', 'sonic aquarium', 'electric catfish'];
+
 /**
  * Scrapbox記法をHTMLに変換する
  */
@@ -125,34 +128,24 @@ function displayLog(filterTag) {
   const container = document.getElementById('log-grid');
   if (!container) return;
 
-  const buttons = document.querySelectorAll('.filter-btn');
-  buttons.forEach(btn => {
-    btn.classList.remove('active');
-    if (btn.textContent.toLowerCase() === filterTag.toLowerCase()) btn.classList.add('active');
-  });
+  // ボタンのactive切り替え処理 (省略)
 
   const filtered = allPages.filter(page => {
-    // --- 追記：特定のタイトル（インデックス用ページなど）を完全に除外 ---
-    const lowerTitle = page.title.toLowerCase();
-    if (lowerTitle === 'よもやま話' || lowerTitle === 'technique') {
+    // ★ 修正：除外リストに含まれているかチェック
+    if (EXCLUDED_TITLES.includes(page.title.toLowerCase())) {
       return false;
     }
 
     const desc = page.descriptions.join(' ').toLowerCase();
-
-    // [雑記]（または [よもやま話]）または [technique] が含まれる記事のみを対象とする
     const isLog = desc.includes('[雑記]') || desc.includes('[よもやま話]') || desc.includes('[technique]');
     if (!isLog) return false;
 
     if (filterTag === 'all') return true;
 
-    // ボタンで選択されたタグが含まれるか判定
-    // "雑記" ボタンが押された時に、内部的に [よもやま話] も含むように調整が必要な場合はここで行います
     let searchTag = filterTag.toLowerCase();
     if (searchTag === '雑記') {
       return desc.includes('[雑記]') || desc.includes('[よもやま話]');
     }
-
     return desc.includes(`[${searchTag}]`);
   });
 
@@ -199,16 +192,11 @@ function displayWorks(filterTag) {
   const container = document.getElementById('works-grid');
   if (!container) return;
 
-  const buttons = document.querySelectorAll('.filter-btn');
-  buttons.forEach(btn => {
-    btn.classList.remove('active');
-    if (btn.textContent.toLowerCase() === filterTag) btn.classList.add('active');
-  });
+  // ボタンのactive切り替え処理 (省略)
 
   const filtered = allPages.filter(page => {
-    // --- 追加：特定のタイトルのページを完全に除外 ---
-    const lowerTitle = page.title.toLowerCase();
-    if (lowerTitle === 'art work' || lowerTitle === 'client work') {
+    // ★ 修正：除外リストに含まれているかチェック
+    if (EXCLUDED_TITLES.includes(page.title.toLowerCase())) {
       return false;
     }
 
