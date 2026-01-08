@@ -144,6 +144,7 @@ a {
     font-weight: 100;
     /* タイトルの日本語を Thin に */
     letter-spacing: 0.15em;
+    line-height: 2.4rem;
 }
 
 /* --- Content Detail (About / Viewer) --- */
