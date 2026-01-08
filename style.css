@@ -29,44 +29,54 @@ a {
     padding: 40px 50px;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    /* 1. 中央揃えではなく「ベースライン（文字の底辺）」で揃える */
+    align-items: baseline;
     box-sizing: border-box;
     z-index: 100;
 }
 
-.logo a {
-    font-size: 1.2rem;
-    font-weight: 400;
-    display: block;
-    letter-spacing: 0.2em;
+/* ロゴの親要素 */
+.logo {
+    line-height: 1;
+    /* 余計な高さを排除 */
 }
 
+.logo a {
+    font-size: 1.2rem;
+    font-weight: 300;
+    /* 2. blockではなくinline-blockに（ベースラインを有効にするため） */
+    display: inline-block;
+    letter-spacing: 0.2em;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+
+/* メニュー全体のコンテナ */
 .top-menu {
     display: flex;
     gap: 2rem;
+    /* 3. メニュー内も底辺で揃える */
+    align-items: baseline;
+    line-height: 1;
 }
 
 .menu-item {
-    text-align: center;
-}
-
-.menu-item {
-    display: block;
-    font-size: 1.2rem;
-    margin-bottom: 8px;
-    color: rgba(255, 255, 255, 0.3);
-    font-weight: 400;
-
+    display: inline-block;
+    line-height: 1;
+    margin: 0;
+    /* margin-bottom: 8px を完全に削除 */
 }
 
 .menu-item a {
     font-size: 1.2rem;
     letter-spacing: 0.2em;
-    font-weight: 400;
-    /* 英字メニューは Regular */
+    font-weight: 300;
     color: rgba(255, 255, 255, 0.4);
-    /* 初期状態は薄く */
     transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    /* 4. ここも line-height を1にして高さをロゴと統一 */
+    line-height: 1;
+    display: inline-block;
 }
 
 .menu-item a:hover {
@@ -138,7 +148,7 @@ a {
 
 /* --- Content Detail (About / Viewer) --- */
 .text-content {
-    max-width: 70vw;
+    max-width: 80vw;
     margin-top: 180px;
     margin-right: auto;
     margin-bottom: 50px;
@@ -157,22 +167,23 @@ a {
 }
 
 .text-content h2 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     margin-bottom: 1.2rem;
     padding-bottom: 0.6rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    font-weight: 400;
+    font-weight: 300;
     letter-spacing: 0.1em;
 }
 
 .text-content p {
     font-size: 1.05rem;
     margin-top: 0;
-    margin-bottom: 0.6rem;
-    line-height: 1.4rem;
+    margin-bottom: 0.4rem;
+    line-height: 1.6rem;
+    letter-spacing: 0.0rem;
     color: rgba(255, 255, 255, 0.9);
     font-weight: 400;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.075em;
 }
 
 /* --- UI Elements --- */
@@ -191,6 +202,8 @@ a {
     gap: 2rem;
     margin-right: auto;
     margin-block-start: 1em;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
 }
 
 .filter-btn {
@@ -245,6 +258,10 @@ a {
 /* 外部リンクのスタイル */
 .external-link {
     color: #fff;
+    display: inline-block;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-all;
     text-decoration: underline;
     text-underline-offset: 4px;
     transition: opacity 0.3s;
@@ -273,6 +290,7 @@ a {
     padding-left: 15px;
     margin: 0.75em 0;
     font-weight: 400;
+    letter-spacing: 0.075em;
 }
 
 .text-content img {
@@ -281,21 +299,35 @@ a {
     margin: 0;
 }
 
+.indent img {
+    /* 幅を親要素（.indent）の50%に制限します。
+       もっと小さくしたい場合は 30% や 200px などに変更してください。 */
+    max-width: 50%;
+    height: auto;
+    /* アスペクト比（縦横比）を維持します */
+    display: block;
+    /* ブロック要素にして、テキストと並ばないようにします */
+    margin-top: 0.5em;
+    /* 上に少し余白 */
+    margin-bottom: 0.5em;
+    /* 下に少し余白 */
+}
+
 /* --- Scrapbox Icons --- */
 /* 通常の img タグのスタイル設定を上書きして、文字と同じサイズにします */
+.indent img.scrapbox-icon,
 .scrapbox-icon {
-    display: inline-block;
+    display: inline-block !important;
+    /* ブロック化を解除し、文字と並ぶように強制 */
     width: 1.2em !important;
-    /* 文字の高さより少し大きいくらい */
+    /* 文字サイズに合わせる */
     height: 1.2em !important;
     vertical-align: middle;
-    /* 文字の高さの中央に揃える */
-    margin: 0 2px !important;
-    /* 前後の文字との隙間を最小限に */
-    border-radius: 2px !important;
-    /* 角丸も小さめに */
-    border: none !important;
-    /* 枠線があれば消す */
+    /* 文字の中央に揃える */
+    margin: 0 0.2em !important;
+    /* 前後の余白を最小限に（ブロック用マージンを消す） */
+    border: none;
+    border-radius: 2px;
 }
 
 .text-content .scrapbox-icon {
@@ -399,8 +431,10 @@ a {
 
 /* --- Related Section Styles --- */
 .related-section {
-    padding-top: 2rem;
-    margin: 10px auto;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-bottom: 4rem;
+    margin-left: auto;
 }
 
 .related-title {
@@ -411,4 +445,153 @@ a {
     margin-bottom: 30px;
     font-weight: 100;
     /* Noto Sans Regular */
+}
+
+/* --- Mobile / Tablet Styles (768px以下) --- */
+@media screen and (max-width: 768px) {
+
+    /* 1. 全体の余白調整 */
+    .global-header {
+        padding: 25px 20px;
+        /* 上下左右の余白を縮小 */
+    }
+
+    .list-container {
+        padding: 120px 20px 60px;
+        /* 上部の大きな余白を調整 */
+    }
+
+    .text-content {
+        max-width: 100%;
+        /* 横幅いっぱいに使う */
+        padding: 0 20px;
+        margin-top: 120px;
+    }
+
+    /* 2. ヘッダー・メニューの調整 */
+    .logo a {
+        font-size: 0.8rem;
+    }
+
+    .top-menu {
+        gap: 1rem;
+        /* メニュー間の距離を詰める */
+    }
+
+    .menu-item a,
+    .filter-btn {
+        font-size: 0.8rem;
+        /* UIテキストを小さく */
+    }
+
+    /* 3. Works / Log リストのタイトルサイズ調整 */
+    .title-area h3,
+    .log-title,
+    .text-content h1 {
+        font-size: 1.2rem;
+        /* 2.2rem から 1.4rem に縮小 */
+        line-height: 1.4em;
+        letter-spacing: 0.1em;
+    }
+
+    .row-link,
+    .log-link {
+        padding: 20px 0;
+        /* 行の上下間隔を詰める */
+        flex-direction: column;
+        /* タグがはみ出さないよう縦並びを許容 */
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .type-tag,
+    .log-type-tag {
+        font-size: 0.8rem;
+        /* タグを控えめに */
+    }
+
+    /* Log一覧の各行のレイアウト設定 */
+    .log-link {
+        display: grid;
+        /* 2列のグリッドにする（1列目：日付、2列目：タグ） */
+        grid-template-columns: auto 1fr;
+        row-gap: 8px;
+        /* 上下（タイトルと日付行の間）の隙間 */
+        column-gap: 15px;
+        /* 日付とタグの間の隙間 */
+        padding: 20px 0;
+        align-items: center;
+    }
+
+    /* 階層をリセットして、中身のタイトルと日付を直接グリッドに参加させる */
+    .log-title-area {
+        display: contents;
+    }
+
+    /* タイトルを1行目全部（2列分）使って表示 */
+    .log-title {
+        grid-column: 1 / 3;
+        order: 1;
+        /* 1番目に表示 */
+        font-size: 1.2rem;
+        line-height: 1.3;
+        margin-bottom: 2px;
+    }
+
+    /* 更新日を2行目・左側に配置 */
+    .log-date {
+        grid-column: 1;
+        order: 2;
+        /* 2番目に表示 */
+        font-size: 0.75rem;
+        width: auto;
+        /* 固定幅を解除 */
+        opacity: 0.6;
+    }
+
+    /* タグを2行目・右側に配置 */
+    .log-type-tag {
+        grid-column: 2;
+        order: 3;
+        /* 3番目に表示 */
+        font-size: 0.8rem;
+        justify-self: start;
+        /* 左寄せ（日付のすぐ横） */
+        opacity: 0.6;
+    }
+
+    /* 4. 本文テキストの調整 */
+    .text-content h2 {
+        font-size: 1.2rem;
+        margin-top: 0.25rem;
+    }
+
+    .text-content p {
+        font-size: 0.8rem;
+        /* 本文をわずかに小さく */
+        line-height: 1.4rem;
+        letter-spacing: 0.05em;
+    }
+
+    .indent {
+        padding-left: 6px;
+        margin-top: 0.2em;
+        margin-right: 0px;
+        margin-bottom: 0.2em;
+        margin-left: 0px;
+        font-size: 0.8rem;
+        line-height: 1.4rem;
+    }
+
+    /* 5. モバイルで不要な要素を非表示 */
+    #hover-preview-container {
+        display: none !important;
+        /* スマホではホバー画像を表示しない */
+    }
+
+    /* 6. 画像のサイズ調整 */
+    #about-content img {
+        max-width: 50%;
+        /* 画像が画面からはみ出さないように */
+    }
 }
