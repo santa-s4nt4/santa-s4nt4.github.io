@@ -524,6 +524,10 @@ a {
         /* タグを控えめに */
     }
 
+    .type-tag {
+        margin-left: 0;
+    }
+
     /* Log一覧の各行のレイアウト設定 */
     .log-link {
         display: grid;
