@@ -369,6 +369,19 @@ a {
     border: none;
 }
 
+/* --- Indent内での動画サイズ調整 --- */
+.indent .video-container {
+    /* 1. 画像の設定(max-width: 50%)と合わせる */
+    max-width: 50%;
+    /* 2. 比率を維持する最新の書き方 */
+    aspect-ratio: 16 / 9;
+    /* 3. 元の設定(padding-bottomのハック)をリセットする */
+    padding-bottom: 0;
+    height: auto;
+    /* 4. 余白の調整 */
+    margin: 0.8em 0;
+}
+
 /* --- Log List Styles --- */
 .log-list {
     margin-top: 20px;
@@ -593,5 +606,9 @@ a {
     #about-content img {
         max-width: 50%;
         /* 画像が画面からはみ出さないように */
+    }
+
+    .indent .video-container {
+        max-width: 100%;
     }
 }
