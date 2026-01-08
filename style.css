@@ -142,9 +142,8 @@ a {
     margin: 0;
     font-size: 2.2rem;
     font-weight: 100;
-    /* タイトルの日本語を Thin に */
     letter-spacing: 0.15em;
-    line-height: 2.4rem;
+    line-height: 2.5rem;
 }
 
 /* --- Content Detail (About / Viewer) --- */
@@ -235,13 +234,6 @@ a {
     padding: 35px 0;
 }
 
-.title-area h3 {
-    margin: 0;
-    font-size: 2.2rem;
-    font-weight: 100;
-    letter-spacing: 0.15em;
-}
-
 .type-tag {
     font-size: 1.2rem;
     font-weight: 300;
@@ -249,6 +241,12 @@ a {
     text-transform: lowercase;
     font-family: "Noto Sans", sans-serif;
     letter-spacing: 0.1em;
+    white-space: nowrap;
+    /* 文字を途中で改行させない */
+    flex-shrink: 0;
+    /* 親要素が狭くなっても、タグ自身の幅を維持する */
+    margin-left: 2rem;
+    /* タイトルが長くても、最低限の余白を確保する */
 }
 
 /* ホバー時にタグの視認性を上げる */

@@ -248,16 +248,18 @@ function renderGrid(pages, container) {
       </a>
     `;
 
-    // ...以下、ホバーイベントの処理...
-    row.addEventListener('mouseenter', () => {
-      if (imgUrl) {
-        previewImg.style.backgroundImage = `url('${imgUrl}')`;
-        previewContainer.style.opacity = '1';
-      }
-    });
-    row.addEventListener('mouseleave', () => {
-      previewContainer.style.opacity = '0';
-    });
+    // --- エラー回避策：要素が存在する場合のみイベントを追加 ---
+    if (previewImg && previewContainer) {
+      row.addEventListener('mouseenter', () => {
+        if (imgUrl) {
+          previewImg.style.backgroundImage = `url('${imgUrl}')`;
+          previewContainer.style.opacity = '1';
+        }
+      });
+      row.addEventListener('mouseleave', () => {
+        previewContainer.style.opacity = '0';
+      });
+    }
     container.appendChild(row);
   });
 }
