@@ -15,14 +15,14 @@
       <a href="index.html">Santa NARUSE</a>
     </div>
     <nav class="top-menu">
-      <div class="menu-item active">
+      <div class="menu-item">
         <a href="index.html">Works</a>
       </div>
       <div class="menu-item">
         <a href="about.html">About</a>
       </div>
       <div class="menu-item">
-        <a href="log.html">Log</a>
+        <a href="memorandum.html">Memorandum</a>
       </div>
     </nav>
   </header>
@@ -53,9 +53,28 @@
         const foundTags = [];
         const lowerText = text.toLowerCase();
 
+        // --- 正規のカテゴリタグのみを抽出する（LOG_TAGSに基づく） ---
+        const tagMatches = text.match(/\[(.*?)\]/g) || [];
+
+        tagMatches.forEach(match => {
+          // [ ] を取り除いた純粋な文字列にする
+          const tagName = match.replace(/[\[\]]/g, '');
+
+          // ★ 修正：LOG_TAGS に含まれている単語（かつ 'all' 以外）だけを 
+          // 「関連記事を呼び出すためのタグ」として認める
+          if (LOG_TAGS.includes(tagName) && tagName !== 'all') {
+            if (!foundTags.includes(tagName)) {
+              foundTags.push(tagName);
+            }
+          }
+        });
+
+        // console.log("関連記事の対象にするタグ:", foundTags);
+
         // Log用タグ
-        if (text.includes('[よもやま話]')) foundTags.push('[よもやま話]');
-        if (lowerText.includes('[technique]')) foundTags.push('[technique]');
+        // if (text.includes('[よもやま話]')) foundTags.push('[よもやま話]');
+        // if (lowerText.includes('[technique]')) foundTags.push('[technique]');
+        // if (lowerText.includes('[実験/習作]')) foundTags.push('[実験/習作]');
 
         // Works用タグ (追加)
         if (lowerText.includes('[art work]')) foundTags.push('[art work]');

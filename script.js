@@ -4,7 +4,28 @@ const PROJECT_NAME = 's4nt4-cc';
 let allPages = [];
 
 // 除外するタイトルのリスト
-const EXCLUDED_TITLES = ['art work', 'client work', 'よもやま話', 'technique', 'sonic aquarium', 'electric catfish'];
+const EXCLUDED_TITLES = ['art work', 'client work', 'よもやま話', 'technique', 'sonic aquarium', 'electric catfish', '実験/習作'];
+
+const LOG_TAGS = ['all', 'よもやま話', 'technique', '実験/習作'];
+
+
+// --- フィルタボタンを動的に生成する関数 ---
+function setupLogFilters() {
+  const nav = document.querySelector('.filter-nav'); // HTML側のボタンを入れる容器
+  if (!nav) return;
+
+  nav.innerHTML = ''; // 一旦空にする
+
+  LOG_TAGS.forEach(tag => {
+    const btn = document.createElement('button');
+    btn.textContent = tag;
+    btn.className = 'filter-btn';
+    if (tag === 'all') btn.classList.add('active'); // 初期状態は all をアクティブに
+
+    btn.onclick = () => displayLog(tag); // クリックイベントを設定
+    nav.appendChild(btn);
+  });
+}
 
 /**
  * Scrapbox記法をHTMLに変換する
@@ -54,7 +75,7 @@ function scrapboxToHtml(text) {
       return `<a href="viewer.html?page=${encodeURIComponent(content)}" class="scrapbox-tag">${content}</a>`;
     });
 
-    // 5. インデント処理
+    // インデント処理
     const indentMatch = line.match(/^(\s+)(.*)/);
     if (indentMatch) {
       const level = indentMatch[1].length;
@@ -78,11 +99,16 @@ async function fetchScrapboxData(pageType, currentPageTitle = null, foundTags = 
     const data = await response.json();
     allPages = data.pages;
 
-    if (pageType === 'works') displayWorks('all');
-    else if (pageType === 'log') displayLog('all');
-    // 第3引数にタグを渡す
-    else if (pageType === 'related') displayRelatedLinks(currentPageTitle, foundTags);
-    else displayTrash();
+    if (pageType === 'works') {
+      displayWorks('all');
+    } else if (pageType === 'log') {
+      setupLogFilters(); // ★ ボタンを作ってから
+      displayLog('all');  // ★ 描画する
+    } else if (pageType === 'related') {
+      displayRelatedLinks(currentPageTitle, foundTags);
+    } else {
+      displayTrash();
+    }
   } catch (err) {
     console.error(err);
   }
@@ -96,25 +122,46 @@ function displayRelatedLinks(currentTitle, tagsToSearch) {
 
   // 1. 関連ページを抽出
   const relatedPages = allPages.filter(page => {
+    // 自分自身のページは除外
     if (page.title === currentTitle) return false;
+
+    // 除外タイトル（インデックス用ページなど）も除外
+    if (EXCLUDED_TITLES.includes(page.title.toLowerCase())) return false;
+
     const desc = page.descriptions.join(' ').toLowerCase();
-    return tagsToSearch.some(tag => desc.includes(tag.toLowerCase()));
+
+    // ★ 強化：タグの検索ロジック
+    return tagsToSearch.some(tag => {
+      // カッコを除去し、小文字にする
+      const t = tag.toLowerCase().replace(/[\[\]]/g, '');
+
+      // 「実験/習作」のようにスラッシュがある場合、分割して「実験」単体でもヒットするようにする
+      const keywords = t.includes('/') ? [t, ...t.split('/')] : [t];
+
+      return keywords.some(k => {
+        const cleanK = k.trim();
+        if (!cleanK) return false;
+        // [実験] のような形式、または本文中の単語として含まれているかチェック
+        return desc.includes(`[${cleanK}]`) || desc.includes(cleanK);
+      });
+    });
   });
+
+  console.log("Found related pages:", relatedPages);
 
   if (relatedPages.length > 0) {
     section.style.display = 'block';
 
-    // 2. タグの種類によって描画方法を変える
-    const isWorkRelated = tagsToSearch.some(tag =>
-      tag.toLowerCase().includes('work')
-    );
+    // 2. 表示スタイルの判定
+    const isWorkRelated = tagsToSearch.some(tag => {
+      const t = tag.toLowerCase();
+      return t.includes('work') || t.includes('art') || t.includes('client');
+    });
 
     if (isWorkRelated) {
-      // Works系（art work / client work）ならサムネイル・ホバーあり
-      container.classList.remove('log-list'); // Log用のスタイルを除去
+      container.classList.remove('log-list');
       renderGrid(relatedPages, container);
     } else {
-      // Log系（雑記 / technique）なら日付付きリスト
       container.classList.add('log-list');
       renderLogList(relatedPages, container);
     }
@@ -128,20 +175,27 @@ function displayLog(filterTag) {
   const container = document.getElementById('log-grid');
   if (!container) return;
 
-  // ボタンのactive切り替え処理 (省略)
+  // ボタンのアクティブ状態の切り替え
+  const buttons = document.querySelectorAll('.filter-btn');
+  buttons.forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.textContent === filterTag) btn.classList.add('active');
+  });
 
   const filtered = allPages.filter(page => {
-    // ★ 修正：除外リストに含まれているかチェック
-    if (EXCLUDED_TITLES.includes(page.title.toLowerCase())) {
-      return false;
-    }
+    // 除外タイトルのチェック
+    if (EXCLUDED_TITLES.includes(page.title.toLowerCase())) return false;
 
     const desc = page.descriptions.join(' ').toLowerCase();
-    const isLog = desc.includes('[雑記]') || desc.includes('[よもやま話]') || desc.includes('[technique]');
-    if (!isLog) return false;
+
+    // ★ 改善：LOG_TAGS に含まれるいずれかのタグを持っているか判定
+    // (all 以外のタグが desc に含まれているか)
+    const hasLogTag = LOG_TAGS.some(t => t !== 'all' && desc.includes(`[${t}]`)) || desc.includes('[よもやま話]');
+    if (!hasLogTag) return false;
 
     if (filterTag === 'all') return true;
 
+    // 特定のタグでの絞り込み
     let searchTag = filterTag.toLowerCase();
     if (searchTag === '雑記') {
       return desc.includes('[雑記]') || desc.includes('[よもやま話]');
@@ -171,9 +225,24 @@ function renderLogList(pages, container) {
     const dd = String(date.getDate()).padStart(2, '0');
     const dateStr = `${yy}/${mm}/${dd}`;
 
-    // タグの判定
+    // --- ★ 改善：タグの判定ロジックを動的に変更 ---
     const desc = page.descriptions.join(' ');
-    const tagLabel = desc.includes('[technique]') ? 'technique' : 'よもやま話';
+
+    // LOG_TAGS（'all'以外）の中で、記事の本文に含まれているものを探す
+    let tagLabel = 'よもやま話'; // デフォルト値
+
+    // LOG_TAGS リストをループして、最初に見つかったタグを表示名にする
+    for (const t of LOG_TAGS) {
+      if (t !== 'all' && desc.includes(`[${t}]`)) {
+        tagLabel = t;
+        break; // 1つ見つかったら終了（複数ある場合は最初のものが優先）
+      }
+    }
+
+    // もし [よもやま話] という直書きタグがあれば優先する（以前の仕様との互換性）
+    if (desc.includes('[よもやま話]')) {
+      tagLabel = 'よもやま話';
+    }
 
     row.innerHTML = `
       <a href="viewer.html?page=${encodeURIComponent(page.title)}" class="log-link">

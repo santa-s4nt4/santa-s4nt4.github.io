@@ -133,11 +133,6 @@ a {
     border-color: #fff;
 }
 
-.row-link {
-    display: block;
-    padding: 35px 0;
-}
-
 .title-area h3 {
     margin: 0;
     font-size: 2.2rem;
@@ -232,6 +227,11 @@ a {
     /* タイトルとタグを両端に配置 */
     align-items: baseline;
     padding: 35px 0;
+}
+
+/* 関連記事セクション内にあるリンクの余白のみを上書き */
+.related-section .row-link {
+    padding: 15px 0;
 }
 
 .type-tag {
