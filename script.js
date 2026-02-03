@@ -261,7 +261,14 @@ function displayWorks(filterTag) {
   const container = document.getElementById('works-grid');
   if (!container) return;
 
-  // ボタンのactive切り替え処理 (省略)
+  // ボタンのactive切り替え処理
+  const buttons = document.querySelectorAll('.filter-nav .filter-btn');
+  buttons.forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.textContent.trim().toLowerCase() === filterTag.toLowerCase()) {
+      btn.classList.add('active');
+    }
+  });
 
   const filtered = allPages.filter(page => {
     // ★ 修正：除外リストに含まれているかチェック
