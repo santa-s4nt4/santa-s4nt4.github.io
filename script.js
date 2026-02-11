@@ -35,47 +35,93 @@ function scrapboxToHtml(text) {
   const title = lines.shift();
   let html = `<h1>${title}</h1>`;
 
+  let inCodeBlock = false;
+  let codeIndentLevel = 0;
+
   lines.forEach(line => {
+    // --- 1. コードブロック開始判定 ---
+    const codeMatch = line.match(/^(\s*)code:(.+)$/);
+    if (!inCodeBlock && codeMatch) {
+      inCodeBlock = true;
+      codeIndentLevel = codeMatch[1].length;
+      const fileName = codeMatch[2].trim();
+
+      // タイトルとpreタグの開始
+      html += `<div class="code-title" style="margin-left:${codeIndentLevel * 20}px">${fileName}</div>`;
+      // style.cssで white-space: pre; が効くようにする
+      html += `<pre class="code-block" style="margin-left:${codeIndentLevel * 20}px"><code>`;
+      return;
+    }
+
+    // --- 2. コードブロック内部の処理 ---
+    if (inCodeBlock) {
+      const currentIndentMatch = line.match(/^(\s*)(.*)/);
+      const currentIndentLevel = currentIndentMatch[1].length;
+      const content = currentIndentMatch[2];
+
+      // ブロック終了判定：インデントが開始行と同じか浅くなったら終了
+      // (ただし空行はインデント0とみなされることがあるため、中身がある場合のみ判定)
+      if (line.trim() !== '' && currentIndentLevel <= codeIndentLevel) {
+        html += '</code></pre>';
+        inCodeBlock = false;
+        // この行はコードブロックの外として、下の通常処理に流す
+      } else {
+        // ★修正ポイント: インデントを復元する処理
+
+        if (line.trim() === '') {
+          // 完全な空行なら改行のみ
+          html += '\n';
+        } else {
+          // 「現在のインデント」から「コードブロック自体のインデント + 1（ブロック内階層）」を引いた分だけ空白を残す
+          // substringを使って、不要な親階層分の空白文字を取り除きます
+          const preservedIndent = currentIndentMatch[1].substring(codeIndentLevel + 1);
+
+          const safeContent = content
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;");
+
+          // 残すべき空白 + 本文 + 改行
+          html += preservedIndent + safeContent + '\n';
+        }
+        return; // コードブロック内として処理終了
+      }
+    }
+
+    // --- 3. 通常の行処理 (ここは変更なし) ---
+
     if (!line.trim()) { html += '<br>'; return; }
 
-    // 1. 強調見出し [* ]
+    // 強調見出し
     line = line.replace(/^\[\* (.+?)\]/g, '<h2>$1</h2>');
 
-    // 2. 画像
+    // 画像
     line = line.replace(/\[(https?:\/\/scrapbox\.io\/files\/[^\]]+)\]/g, (match, url) => {
       const proxiedUrl = url.replace('https://scrapbox.io', PROXY_BASE);
       return `<img src="${proxiedUrl}" alt="image">`;
     });
     line = line.replace(/\[(https?:\/\/[^\]]+\.(?:png|jpg|jpeg|gif|svg|webp))\]/g, '<img src="$1">');
 
-    // 3. YouTube
+    // YouTube
     line = line.replace(/\[https?:\/\/(?:www\.youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]+)\]/g,
       '<div class="video-container"><iframe src="https://www.youtube.com/embed/$1" frameborder="0" allowfullscreen></iframe></div>');
 
-    // 4. 内部リンク & 外部リンク & アイコン (ここを修正)
+    // リンク
     line = line.replace(/\[([^\]]+)\]/g, (match, content) => {
-      // 外部リンクの判定（httpが含まれているか）
       const urlMatch = content.match(/(https?:\/\/[^\s]+)/);
-
       if (urlMatch) {
         const url = urlMatch[1];
-        // URL以外の部分をラベルとして抽出
         const label = content.replace(url, '').trim();
-        // ラベルがあればそれを使い、なければURLをそのまま表示
         return `<a href="${url}" target="_blank" class="external-link">${label || url}</a>`;
       }
-
-      // アイコン判定
       if (content.endsWith('.icon')) {
         const iconName = content.replace('.icon', '');
         return `<img src="${PROXY_BASE}/api/pages/${PROJECT_NAME}/${encodeURIComponent(iconName)}/icon" class="scrapbox-icon">`;
       }
-
-      // それ以外（[Sight / Insight] など）は内部リンクとして viewer.html へ
       return `<a href="viewer.html?page=${encodeURIComponent(content)}" class="scrapbox-tag">${content}</a>`;
     });
 
-    // インデント処理
+    // インデント
     const indentMatch = line.match(/^(\s+)(.*)/);
     if (indentMatch) {
       const level = indentMatch[1].length;
@@ -86,6 +132,11 @@ function scrapboxToHtml(text) {
       html += line;
     }
   });
+
+  if (inCodeBlock) {
+    html += '</code></pre>';
+  }
+
   return html;
 }
 
