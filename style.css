@@ -465,12 +465,12 @@ a {
 
 /* コードブロックのタイトル（ファイル名など） */
 .code-title {
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
     background-color: rgba(0, 0, 0, 0.2);
     /* 背景より少し濃く */
-    padding: 4px 10px;
-    border-radius: 4px 4px 0 0;
+    padding: 2px 5px;
+    border-radius: 2px 2px 0 0;
     /* 上部だけ丸く */
     display: inline-block;
     margin-bottom: 0;
@@ -498,20 +498,12 @@ pre.code-block {
 /* コードの文字スタイル */
 pre.code-block code {
     font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-    font-size: 0.95rem;
+    font-size: 0.75rem;
     line-height: 1.5;
     color: #e0e0e0;
     /* 明るいグレー */
     white-space: pre;
     /* 改行やスペースをそのまま表示 */
-}
-
-/* モバイル表示時の微調整 */
-@media screen and (max-width: 768px) {
-    pre.code-block {
-        padding: 10px;
-        font-size: 0.8rem;
-    }
 }
 
 /* --- Mobile / Tablet Styles (768px以下) --- */
